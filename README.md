@@ -4,7 +4,6 @@
 | nickname      | string         | null: false                    |
 | email         | string         | null: false, unique: true      |
 | experience_id | integer        | null: false                    |
-| target_id     | integer        | null: false                    |
 | introduction  | string         | null: false                    |
 
 ## association
