@@ -3,13 +3,24 @@
 |---------------|----------------|--------------------------------|
 | nickname      | string         | null: false                    |
 | email         | string         | null: false, unique: true      |
-| experience_id | integer        | null: false                    |
-| introduction  | string         | null: false                    |
 
 ## association
 user has_many :comments
 user has_many :posts
+user has_one :profile
 
+
+# profilesテーブル
+| Column        | Type           | Option                         |
+|---------------|----------------|--------------------------------|
+| user_id       | references     |                                |
+| experience_id | integer        | null: false                    |
+| part_id       | integer        | null: false                    |
+| frequency_id  | integer        | null: false                    |
+| introduction  | string         | null: false                    |
+
+## association
+profile belongs_to :user, optional: true
 
 # commentsテーブル
 | Column       | Type           | Option                         |

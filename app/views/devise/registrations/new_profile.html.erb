@@ -1,0 +1,32 @@
+<h2> プロフィール登録</h2>
+
+<%= form_for @profile do |f| %>
+  <%= render "devise/shared/error_messages", resource: @profile %>
+
+  <div class="field">
+     <%= f.label :experience_id %><br />
+     <%= f.collection_select( :experience_id, Experience.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field">
+     <%= f.label :part_id %><br />
+     <%= f.collection_select( :part_id, Part.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field">
+     <%= f.label :frequency_id %><br />
+     <%= f.collection_select( :frequency_id, Frequency.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %> <br>
+    <%= f.text_area :introduction, placeholder: "一言" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

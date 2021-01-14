@@ -1,21 +1,11 @@
 <h2>新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_for(@user, url: user_registration_path) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @user %>
 
   <div class="field">
     <%= f.label :nickname %><br />
     <%= f.text_field :nickname,maxlength: "30" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :experience_id %><br />
-    <%= f.collection_select :experience_id, Experience.all, :id, :name, {} %>
-  </div>
-
-  <div class="field">
-    <%= f.label :introduction %><br />
-    <%= f.text_area :introduction, placeholder: "自己紹介/意気込みなど", maxlength: "200"%>
   </div>
 
   <div class="field">
@@ -37,7 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Next" %>
   </div>
 <% end %>
 
