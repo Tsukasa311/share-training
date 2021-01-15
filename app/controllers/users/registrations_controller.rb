@@ -25,9 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     unless @profile.valid?
       render :new_profile and return
     end
-    binding.pry
     @user.build_profile(@profile.attributes)
-    binding.pry
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
