@@ -20,7 +20,7 @@ class User < ApplicationRecord
       sns.user = user
       sns.save
     end
-    {user: user, sns: sns}
+    {user: user, sns: sns} #返り値
   end
 
 end
