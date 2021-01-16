@@ -41,6 +41,7 @@ comment belongs_to :post
 | user_id      | references     | null: false, foreign_key: true |
 
 ## association
+belongs_to :user
 post has_many :post_tags
 post has_many :tags, through: :post_tags
 

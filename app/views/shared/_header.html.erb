@@ -1,0 +1,18 @@
+<header class="main_header">
+      <div class="left_header">
+        <div class="app_title">
+          <%= link_to "ShareTraining", root_path, class: "app_logo" %>
+        </div>
+      </div>
+      <div class="right_header">
+        <div class="sign_in_box">
+          <% if user_signed_in? %>
+            <%= link_to "Shareする", new_post_path, class: "share_btn"%>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign_btn"%>
+          <% else %>
+            <%= link_to "新規登録", new_user_path, class: "sign_btn" %>
+            <%= link_to "ログイン", new_user_session_path, class: "sign_btn"%>
+          <% end %>
+        </div>
+      </div>
+    </header>

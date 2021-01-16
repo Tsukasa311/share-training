@@ -1,0 +1,42 @@
+.main_header{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  }
+  
+  .left_header{
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  }
+  
+  .app_title{
+    margin: 0 20px;
+  }
+  
+  .app_logo{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .right_header{
+    background-color:lightgreen;
+    display: flex;
+    align-items: center;
+  }
+  
+  .share_btn{
+    background-color: lightblue;
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+  }
+  
+  .sign_btn{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+  }

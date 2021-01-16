@@ -1,8 +1,48 @@
-<h1>test</h1>
-<% if user_signed_in? %>
+<%= render "shared/header"%>
 
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
-<% else %>
-<%= link_to "新規登録", new_user_path %>
-<%= link_to "ログイン", new_user_session_path%>
-<% end %>
+<div class="home_top">
+  <div class="home_title">
+    <h1>トレーニングをしよう</h1>
+  </div>
+  <div class="search_wrapper">
+    <div class="search_form">
+    </div>
+  </div>
+</div>
+<div class="home_part">
+  <div class="part_title">
+    <h2>部位から探す</h2>
+  </div>
+  <div class= "parts_wrapper">
+    <div class="part_item">
+      <div class="part_name">
+        <p>大胸筋</p>
+      </div>
+    </div>
+    <div class="part_item">
+      <div class="part_name">
+        <p>上腕二頭筋</p>
+      </div>
+    </div>
+    <div class="part_item">
+      <div class="part_name">
+        <p>上腕三頭筋</p>
+      </div>
+    </div>
+    <div class="part_item">
+      <div class="part_name">
+        <p>肩</p>
+      </div>
+    </div>
+    <div class="part_item">
+      <div class="part_name">
+        <p>腹筋</p>
+      </div>
+    </div>
+    <div class="part_item">
+      <div class="part_name">
+        <p>脚</p>
+      </div>
+    </div>
+  </div>
+</div>

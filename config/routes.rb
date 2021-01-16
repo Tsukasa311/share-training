@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "posts#home"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   resources :users, only: :new
+  resources :posts, only: [:new, :index]
 end

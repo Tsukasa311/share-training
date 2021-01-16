@@ -1,0 +1,58 @@
+.index_wrapper{
+  margin: 0 100px;
+  height: 100vh;
+}
+
+.part_index{
+  background-color: rgb(196, 240, 196);
+  height: 80px;
+}
+
+.part_index,p {
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.shared_posts_wrapper{
+  background-color: rgb(195, 232, 245);
+  height: 100%;
+}
+
+.shared_post{
+  height: 200px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(167, 167, 173);
+  display: flex;
+}
+
+.user_wrapper{
+  height: 100%;
+  width: 30%;
+}
+
+.user_info{
+  background-color: white;
+  height: 35%;
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_name{
+  background-color: rgb(203, 180, 245);
+  height: 50%;
+  width: 70%;
+}
+
+.user_introduction{
+  background-color: rgb(218, 235, 156);
+  height: 65%;
+}
+
+.shared_text{
+  background-color: rgb(221, 200, 160);
+  height: 100%;
+  width: 100%;
+}

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :sns_credentials
+  has_many :posts
 
   validates :nickname, presence: true, length: { maximum: 30 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze, message: "Include both letters and numbers"}
