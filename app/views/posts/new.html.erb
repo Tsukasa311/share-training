@@ -1,12 +1,21 @@
 <%= render "shared/header"%>
 
-<div class="post_field">
-  <div class="post_wrapper">
-    <div class="user_icon">
+<%= form_with model: @post, url:  posts_path, local: true do |f|%>
+  <div class="post_field">
+    <div class="post_wrapper">
+      <div class="user_icon">icon
+      </div>
+      <div class="right_input_area">
+        <div class="post_text">
+          <%= f.text_area :text, class: "text_area", placeholder: "トレーンングメニューをシェアしよう!!"%>
+        </div>
+        <div class="tag_field">
+          <%= f.text_field :name, id: "posts_tag_name", class: "input_tag", placeholder: "タグを入力してください"%>
+        </div>
+      </div>
     </div>
-    <div class="post_text">
+    <div class="post_btn">
+      <%= f.submit "投稿する", class: "submit_btn"%>
     </div>
   </div>
-  <div class="post_btn">
-  </div>
-</div>
+<% end %>

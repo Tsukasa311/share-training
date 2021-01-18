@@ -1,0 +1,32 @@
+<div class="index_wrapper">
+  <div class="shared_posts_wrapper">
+    <% @posts.each do |post|%>
+      <div class="shared_post">
+        <div class="user_wrapper">
+          <div class="user_info">
+            <div class="user_icon">
+            </div>
+            <div class="user_name">
+              <%= post.user.nickname%>
+            </div>
+          </div>
+          <div class="user_introduction">
+            <%= post.user.profile.introduction%>
+          </div>
+        </div>
+        <div class="text_tag_wrapper">
+          <div class="shared_text">
+            <%= post.text%>
+          </div>
+          <ul class="tag">
+            <li class="tag-list">
+              <% post.tags.each do |tag|%>
+                #<%= tag.name %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

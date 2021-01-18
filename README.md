@@ -49,14 +49,14 @@ post has_many :tags, through: :post_tags
 # tagsテーブル
 | Column        | Type          | Option                         |
 |---------------|---------------|--------------------------------|
-| name          | string        | null: false, unique: true      |
+| name          | string        | null: false, uniqueness: true  |
 
 ## association
 tag has_many :pots_tags
 tag has_many :posts, through: :post_tags
 
 
-# post_tagsテーブル
+# post_tag_relationテーブル
 | Column        | Type          | Option                         |
 |---------------|---------------|--------------------------------|
 | post_id       | references    | null: false, foreign_key: true |

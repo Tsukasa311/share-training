@@ -9,5 +9,10 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   resources :users, only: :new
-  resources :posts, only: [:new, :index]
+  resources :posts, only: [:new, :index, :create] do
+    collection do
+      get 'search'
+      get 'tag_search'
+    end
+  end
 end

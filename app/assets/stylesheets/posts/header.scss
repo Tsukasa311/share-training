@@ -5,9 +5,8 @@
   }
   
   .left_header{
-  background-color: lightblue;
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   }
   
   .app_title{
@@ -22,21 +21,20 @@
   }
   
   .right_header{
-    background-color:lightgreen;
     display: flex;
     align-items: center;
   }
   
   .share_btn{
-    background-color: lightblue;
+    background-color: orange;
+    padding: 20px;
     text-decoration: none;
     color: black;
-    margin: 0 20px;
   }
   
   .sign_btn{
-    background-color: white;
+    background-color: rgb(59, 77, 240);
+    padding: 20px;
     text-decoration: none;
     color: black;
-    margin: 0 20px;
   }
