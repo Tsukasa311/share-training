@@ -25,7 +25,10 @@
               <span><%= image_tag 'arrow_top.png' %></span>
               <ul class="more_lists">
                 <li>
-                  <%= link_to "削除", post_path(@post.id) %>
+                  <%= link_to "編集", post_path(@post.id), class: "list" %>
+                </li>
+                <li>
+                  <%= link_to "削除", "#", class: "list" %>
                 </li>
               </ul>
             </div>

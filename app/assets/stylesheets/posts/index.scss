@@ -77,22 +77,20 @@
   text-align: center;
   height: 30px;
   width: 30px;
-  cursor: pointer;
 }
 
 .more_lists{
   background-color:rgb(240, 240, 119);
   width: 70px;
-  padding: 10px 0;
   display: none;
   text-align: center;
-  cursor: pointer;
   position: absolute;
   right: 0px;
 }
 
-.more_lists:hover {
-  background-color: rgb(238, 255, 0);
+.show_btn{
+  display: block;
+  padding: 10px 0;
 }
 
 .shared_text{
