@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :set_post, only: [:show]
 
   def home
   end
@@ -9,9 +10,10 @@ class PostsController < ApplicationController
   end
 
   def tag_search
-    return nil if params[:keyword] == ""
+    return nil if params[:keyword] == ''
+
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
-    render json:{ keyword: tag }
+    render json: { keyword: tag }
   end
 
   def index
@@ -32,7 +34,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:posts_tag).permit(:text, :name).merge(user_id: current_user.id)

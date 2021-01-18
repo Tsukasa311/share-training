@@ -1,7 +1,6 @@
 class PostsTag
-
   include ActiveModel::Model
-  attr_accessor :text, :name ,:user_id
+  attr_accessor :text, :name, :user_id
 
   with_options presence: true do
     validates :text

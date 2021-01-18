@@ -9,19 +9,19 @@ class User < ApplicationRecord
   has_many :posts
 
   validates :nickname, presence: true, length: { maximum: 30 }
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze, message: "Include both letters and numbers"}
+  validates :password,
+            format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze, message: 'Include both letters and numbers' }
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
       nickname: auth.info.name,
-        email: auth.info.email
+      email: auth.info.email
     )
     if user.persisted?
       sns.user = user
       sns.save
     end
-    {user: user, sns: sns} #返り値
+    { user: user, sns: sns } # 返り値
   end
-
 end

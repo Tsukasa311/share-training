@@ -58,6 +58,41 @@
 
 .text_tag_wrapper{
   width: 100%;
+  position: relative
+}
+
+.more{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+}
+
+.more:hover ul.more_lists{
+  display: block;
+}
+
+.text_tag_wrapper span{
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.more_lists{
+  background-color:rgb(240, 240, 119);
+  width: 70px;
+  padding: 10px 0;
+  display: none;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+}
+
+.more_lists:hover {
+  background-color: rgb(238, 255, 0);
 }
 
 .shared_text{
