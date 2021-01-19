@@ -1,0 +1,45 @@
+.user_top_wrapper{
+  background-color: darkgray;
+  padding: 50px 100px;
+  height: 500px;
+  width: 100vw;
+  display: flex;
+}
+
+.user_left_wrapper{
+  height: 100%;
+  width: 100%;
+}
+
+.user_icon_info_wrapper{
+  background-color: darkgray;
+  height: 60%;
+  width: 100%;
+  display: flex;
+}
+
+.user_icon_wrapper{
+  background-color: rgb(224, 181, 181);
+  height: 100%;
+  width: 30%;
+  padding: 10px;
+}
+
+.user_info_lists{
+  background-color: rgb(223, 204, 165);
+  height: 100%;
+  width: 70%;
+  padding: 20px;
+}
+
+.user_intro_wrapper{
+  background-color: rgb(121, 101, 133);
+  height: 40%;
+  width: 100%;
+}
+
+.user_right_wrapper{
+  background-color: rgb(131, 190, 156);
+  height: 100%;
+  width: 100%;
+}

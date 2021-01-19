@@ -1,0 +1,25 @@
+<%= render "/shared/header" %>
+<div class="user_top_wrapper">
+  <div class="user_left_wrapper">
+    <div class="user_icon_info_wrapper">
+      <div class="user_icon_wrapper">
+      </div>
+      <div class="user_info_lists">
+        <ul>
+          <li>ニックネーム：<%= @user.nickname %>
+          </li>
+          <li>筋トレ歴：<%= @user.profile.Experience.name%>
+          </li>
+          <li>鍛えたい部位：<%= @user.profile.Part.name%>
+          </li>
+          <li>トレーニング頻度：<%= @user.profile.Frequency.name%>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="user_intro_wrapper">
+    </div>
+  </div>
+  <div class="user_right_wrapper">
+  </div>
+</div>

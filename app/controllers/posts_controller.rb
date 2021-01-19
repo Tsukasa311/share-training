@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
-  before_action :set_post, only: [:show]
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set_post, only: [:show,:destroy]
 
   def home
   end
@@ -35,6 +35,17 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    unless current_user.id == @post.user_id
+      redirect_to root_path and return
+    end
+    if @post.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private

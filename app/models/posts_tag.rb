@@ -14,4 +14,5 @@ class PostsTag
 
     PostTagRelation.create(post_id: post.id, tag_id: tag.id)
   end
+  
 end

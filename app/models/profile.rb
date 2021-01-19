@@ -7,5 +7,7 @@ class Profile < ApplicationRecord
     validates :introduction,  length: { maximum: 250 }
   end
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :Experience, :Frequency, :Part
+  belongs_to :Frequency
+  belongs_to :Part
+  belongs_to :Experience
 end

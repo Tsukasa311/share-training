@@ -3,10 +3,16 @@
         <div class="app_title">
           <%= link_to "ShareTraining", root_path, class: "app_logo" %>
         </div>
+        <% if user_signed_in? %>
+        <div class="current_user_name">
+          こんにちは！<%= current_user.nickname%>さん
+        </div>
+        <% end %>
       </div>
       <div class="right_header">
         <div class="sign_in_box">
           <% if user_signed_in? %>
+            <%= link_to "マイページ", user_path(current_user.id), class: "mypage_btn"%>
             <%= link_to "Shareする", new_post_path, class: "share_btn"%>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign_btn"%>
           <% else %>

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     get 'profiles', to: 'users/registrations#new_profile'
     post 'profiles', to: 'users/registrations#create_profile'
   end
-  resources :users, only: :new
-  resources :posts, only: [:new, :index, :create, :show] do
+  resources :users, only: [:new, :show]
+  resources :posts, only: [:new, :index, :create, :show, :destroy] do
     collection do
       get 'search'
       get 'tag_search'

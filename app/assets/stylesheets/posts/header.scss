@@ -1,7 +1,7 @@
-.main_header{
-  display: flex;
-  justify-content: space-between;
-  height: 60px;
+  .main_header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
   }
   
   .left_header{
@@ -23,6 +23,13 @@
   .right_header{
     display: flex;
     align-items: center;
+  }
+  
+  .mypage_btn{
+    background-color: rgb(72, 124, 72);
+    padding: 20px;
+    text-decoration: none;
+    color: black;
   }
   
   .share_btn{
