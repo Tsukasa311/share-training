@@ -1,4 +1,15 @@
 <%= render "/shared/header" %>
+<div class="user_page_title">
+  <div class="more">
+    <span><%= image_tag 'arrow_top.png' %></span>
+    <ul class="more_lists">
+      <li>
+        <%= link_to "編集", edit_user_path, class: "show_btn" %>
+      </li>
+    </ul>
+  </div>
+  Profile
+</div>
 <div class="user_top_wrapper">
   <div class="user_left_wrapper">
     <div class="user_icon_info_wrapper">
@@ -6,20 +17,25 @@
       </div>
       <div class="user_info_lists">
         <ul>
-          <li>ニックネーム：<%= @user.nickname %>
+          <li>ニックネーム：<span><%= @user.nickname %></span>
           </li>
-          <li>筋トレ歴：<%= @user.profile.Experience.name%>
+          <li>筋トレ歴：<span><%= @user.profile.Experience.name%></span>
           </li>
-          <li>鍛えたい部位：<%= @user.profile.Part.name%>
+          <li>鍛えたい部位：<span><%= @user.profile.Part.name%></span>
           </li>
-          <li>トレーニング頻度：<%= @user.profile.Frequency.name%>
+          <li>トレーニング頻度：<span><%= @user.profile.Frequency.name%></span>
           </li>
         </ul>
       </div>
     </div>
     <div class="user_intro_wrapper">
+      <%= @user.profile.introduction %>
     </div>
   </div>
   <div class="user_right_wrapper">
   </div>
 </div>
+<div class="user_page_title">
+<%= @user.nickname%>さんの投稿一覧
+</div>
+<%= render "/posts/posts" %>

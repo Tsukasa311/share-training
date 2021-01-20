@@ -1,6 +1,13 @@
+.user_page_title{
+  background-color: rgb(148, 177, 221);
+  padding:20px 100px;
+  text-align: center;
+  position: relative;
+}
+
 .user_top_wrapper{
   background-color: darkgray;
-  padding: 50px 100px;
+  padding: 40px 100px;
   height: 500px;
   width: 100vw;
   display: flex;
@@ -29,13 +36,26 @@
   background-color: rgb(223, 204, 165);
   height: 100%;
   width: 70%;
-  padding: 20px;
+  padding-left: 25px;
+}
+
+.user_info_lists ul li{
+  font-size: 24px;
+  margin: 28px 0;
+  position: relative;
+}
+
+.user_info_lists ul li span{
+  position: absolute;
+  left: 55%;
 }
 
 .user_intro_wrapper{
   background-color: rgb(121, 101, 133);
   height: 40%;
   width: 100%;
+  padding: 25px;
+  font-size: 20px;
 }
 
 .user_right_wrapper{

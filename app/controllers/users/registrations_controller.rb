@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end
+    binding.pry
     @user = User.new(sign_up_params)
     render :new and return unless @user.valid?
 
