@@ -39,6 +39,9 @@ comment belongs_to :post
 |--------------|----------------|--------------------------------|
 | text         | string         | null: false                    |
 | user_id      | references     | null: false, foreign_key: true |
+| part_id      | integer        | null: false                    |
+| equipment_id | integer        | null: false                    |
+| place_id     | integer        | null: false                    |
 
 ## association
 belongs_to :user

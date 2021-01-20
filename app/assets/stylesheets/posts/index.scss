@@ -100,15 +100,14 @@
   padding: 15px;
 }
 
-.tag{
-  background-color: rgb(204, 191, 193);
-  height: 20%;
+.tag_list_field{
+  background-color: rgb(143, 202, 192);
+  height: 40px;
   width: 100%;
-  padding: 10px 15px;
 }
 
-.tag_list{
-  background-color: white;
-  height: 100%;
-  width: 100%;
+.tag_list_field ul li{
+  color: rgb(4, 4, 158);
+  display: inline-block;
+  padding: 10px 0 10px 20px;
 }

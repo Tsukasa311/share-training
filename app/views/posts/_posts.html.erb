@@ -26,13 +26,16 @@
           <div class="shared_text">
             <%= post.text%>
           </div>
-          <ul class="tag">
-            <li class="tag-list">
-              <% post.tags.each do |tag|%>
-                #<%= tag.name %>
-              <% end %>
-            </li>
-          </ul>
+          <div class="tag_list_field">
+            <ul>
+              <li>#<%= post.part.name %>
+              </li>
+              <li>#<%= post.equipment.name %>
+              </li>
+              <li>#<%= post.place.name %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     <% end %>
