@@ -1,8 +1,11 @@
 <div class="search_wrapper">
   <div class="search_form">
-    <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-      <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search_text_field"%>
-      <%= f.submit "検索", class: "search_btn"%>
+    <%= search_form_for @p, url: search_posts_path do |f| %>
+      <%= f.search_field :text_cont, placeholder: "キーワード", class: "search_text_field"%>
+      <%= f.collection_select :part_id_eq, Part.all, :id, :name, {include_blank: '部位'}, {class: "tag_search_form"} %>
+      <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {include_blank: '器具'}, {class: "tag_search_form"}%>
+      <%= f.collection_select :place_id_eq, Place.all, :id, :name, {include_blank: 'トレーニング場所'}, {class: "tag_search_form"}%>
+      <%= f.submit '検索', class: "search_btn"%>
     <% end %>
   </div>
 </div>

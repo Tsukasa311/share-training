@@ -1,43 +1,46 @@
 <div class="index_wrapper">
   <div class="shared_posts_wrapper">
-    <% @posts.each do |post|%>
-      <div class="shared_post">
-        <div class="user_wrapper">
-          <div class="user_info">
-            <div class="user_icon">
-            </div>
-            <div class="user_name">
-              <%= post.user.nickname%>
-            </div>
+    <div class="shared_post">
+      <div class="user_wrapper">
+        <div class="user_info">
+          <div class="user_icon">
           </div>
-          <div class="user_introduction">
-            <%= post.user.profile.introduction%>
+          <div class="user_name">
+            <%= post.user.nickname%>
           </div>
         </div>
-        <div class="text_tag_wrapper">
-          <div class="more">
-            <span><%= image_tag 'arrow_top.png' %></span>
-            <ul class="more_lists">
-              <li>
-                <%= link_to "詳細", post_path(post.id), class: "show_btn" %>
-              </li>
-            </ul>
-          </div>
-          <div class="shared_text">
-            <%= post.text%>
-          </div>
-          <div class="tag_list_field">
-            <ul>
-              <li>#<%= post.part.name %>
-              </li>
-              <li>#<%= post.equipment.name %>
-              </li>
-              <li>#<%= post.place.name %>
-              </li>
-            </ul>
-          </div>
+        <div class="user_introduction">
+          <%= safe_join(post.user.profile.introduction.split("\n"),tag(:br)) %>
         </div>
       </div>
-    <% end %>
+      <div class="post_text_wrapper">
+        <div class="more">
+          <span><%= image_tag 'arrow.png' %></span>
+          <ul class="more_lists_wrapper">
+            <li class="more_lists">
+              <%= link_to "詳細", post_path(post.id), class: "show_btn" %>
+            </li>
+            <% if current_user.id == post.user_id%>
+              <li class="more_lists">
+                <%= link_to "削除", post_path(post.id), method: :delete, class: "show_btn" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="shared_text">
+          <%= safe_join(post.text.split("\n"),tag(:br)) %>
+        </div>
+        <div class="tag_list_field">
+          <ul>
+            <li>#<%= post.part.name %>
+            </li>
+            <li>#<%= post.equipment.name %>
+            </li>
+            <li>#<%= post.place.name %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

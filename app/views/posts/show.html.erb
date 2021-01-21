@@ -4,43 +4,4 @@
   <%= link_to "#{@post.user.nickname}さんの投稿詳細", url: "#" %>
 </div>
 
-<div class="index_wrapper">
-  <div class="shared_posts_wrapper">
-      <div class="shared_post">
-        <div class="user_wrapper">
-          <div class="user_info">
-            <div class="user_icon">
-            </div>
-            <div class="user_name">
-              <%= @post.user.nickname%>
-            </div>
-          </div>
-          <div class="user_introduction">
-            <%= @post.user.profile.introduction%>
-          </div>
-        </div>
-        <div class="text_tag_wrapper">
-          <% if current_user.id == @post.user_id%>
-            <div class="more">
-              <span><%= image_tag 'arrow_top.png' %></span>
-              <ul class="more_lists">
-                <li>
-                  <%= link_to "削除", post_path(@post.id), method: :delete, class: "list" %>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-          <div class="shared_text">
-            <%= @post.text%>
-          </div>
-          <ul class="tag">
-            <li class="tag-list">
-              <% @post.tags.each do |tag|%>
-                #<%= tag.name %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-  </div>
-</div>
+<%= render "posts", { post: @post } %>

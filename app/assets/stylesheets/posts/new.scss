@@ -1,48 +1,42 @@
 .post_field{
-  background-color: lightgray;
-  height: 560px;
-  margin: 0 120px;
+  background-color: rgb(240, 239, 239);
+  box-shadow: 0 0 7px gray;
+  height: 580px;
+  width: 1000px;
+  margin: 20px auto 0;
   padding-top: 50px;
   position: relative;
 }
 
 .post_wrapper{
-  background-color: lightblue;
+  // background-color: lightblue;
   height: 85%;
   margin: 0 50px;
   padding: 40px 50px 40px;
   display: flex;
 }
 
-.user_icon{
-  background-color: lightgreen;
-  height: 70px;
-  width: 70px;
-  border-radius: 50px;
-  margin-right: 30px;
-}
-
-.right_input_area{
+.post_input_area{
   height: 100%;
   width: 100%;
 }
 
 .post_text{
-  background-color: rgb(230, 203, 207);
+  background-color: white;
   height: 70%;
   width: 100%;
   margin-bottom: 20px;
 }
 
 .text_area{
-  border: 1px solid rgb(146, 139, 139);
+  border: 1px solid darkgray;
   height: 100%;
   width: 100%;
+  word-break: break-all;
   padding: 20px;
 }
 
 .tag_field{
-  background-color: rgb(143, 202, 192);
   height: 40px;
   width: 100%;
   display: flex;
@@ -50,38 +44,40 @@
 }
 
 .tag_form{
-  background-color: rgb(214, 199, 112);
-  border: 1px solid rgb(146, 139, 139);
+  border: 1px solid darkgray;
+  color: rgb(82, 82, 82);
   height: 100%;
   width: 100%;
+  background-color: white;
 }
 
+.tag_form:hover{
+  background-color: rgb(232, 240, 254);
+  transition: 0.4s;
+}
 .tag_decoration{
-  background-color: rgb(198, 198, 204);
   width: 100%;
   padding: 10px;
   cursor: pointer;
 }
 
-.child{
-  border-bottom: solid 1px black;
-  width: 30%;
-  margin: 10px 0;
-  padding-left: 20px;
-}
-
 .post_btn{
-  background-color: rgb(238, 229, 144);
+  background-color: rgba(255, 167, 52, 0.712);
   height: 60px;
   width: 120px;
   position: absolute;
-  bottom: 85px;
+  bottom: 90px;
   right: 100px;
+}
+
+.post_btn:hover{
+  background-color: rgb(255, 167, 52);
+  transition: 0.4s;
 }
 
 .submit_btn{
   height: 100%;
   width: 100%;
   text-align: center;
-  border: 1px solid rgb(146, 139, 139);
+  border: 1px solid darkgray;
 }

@@ -4,4 +4,6 @@
   <h1>全国の〇〇トレーニング</h1>
 </div>
  
-<%= render "posts"%>
+ <% @posts.each do |post|%>
+<%= render "posts", { post: post} %>
+<% end %>

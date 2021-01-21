@@ -10,16 +10,8 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :text
-    validates :part_id,       numericality: { other_than: 0}
-    validates :equipment_id,  numericality: { other_than: 0}
-    validates :place_id,      numericality: { other_than: 0}
-  end
-
-  def self.search(search)
-    if search != ''
-      Post.where('text LIKE(?)', "%#{search}%")
-    else
-      Post.all
-    end
+    validates :part_id,       numericality: { other_than: 0 }
+    validates :equipment_id,  numericality: { other_than: 0 }
+    validates :place_id,      numericality: { other_than: 0 }
   end
 end

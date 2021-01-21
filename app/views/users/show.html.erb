@@ -36,6 +36,9 @@
   </div>
 </div>
 <div class="user_page_title">
-<%= @user.nickname%>さんの投稿一覧
+  <%= @user.nickname%>さんの投稿一覧
 </div>
-<%= render "/posts/posts" %>
+
+<% @posts.each do |post| %>
+<%= render "/posts/posts", { post: post} %>
+<% end %>

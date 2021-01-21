@@ -1,3 +1,7 @@
 <%= render "shared/header"%>
+
 <%= render "search"%>
-<%= render "posts"%>
+
+<% @results.each do |post| %>
+<%= render "posts", { post: post } %>
+<% end %>

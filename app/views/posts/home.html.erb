@@ -3,54 +3,59 @@
   <div class="home_title">
     <h1>トレーニングをしよう</h1>
   </div>
-  <div class="search_wrapper">
-    <div class="search_form">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search_text_field"%>
-        <%= f.submit "検索", class: "search_btn"%>
-      <% end %>
-    </div>
-  </div>
+<%= render "search" %>
 </div>
 <div class="home_part">
   <div class="part_title">
-    <%= link_to "部位から探す", posts_path %>
+    部位から探す
   </div>
   <div class= "parts_wrapper">
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "大胸筋", type: "hidden"%>
-        <%= f.submit "大胸筋", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "1"}, {class: "hidden"} %>
+        <%= f.submit "大胸筋", class: "part_btn chest"%>
       <% end %>
     </div>
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "上腕二頭筋", type: "hidden"%>
-        <%= f.submit "上腕二頭筋", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "2"}, {class: "hidden"} %>
+        <%= f.submit "広背筋・僧帽筋", class: "part_btn back"%>
       <% end %>
     </div>
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "上腕三頭筋", type: "hidden"%>
-        <%= f.submit "上腕三頭筋", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "3"}, {class: "hidden"} %>
+        <%= f.submit "肩・三角筋", class: "part_btn shoulder"%>
       <% end %>
     </div>
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "肩", type: "hidden"%>
-        <%= f.submit "肩", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "4"}, {class: "hidden"} %>
+        <%= f.submit "上腕二頭筋", class: "part_btn arm2"%>
       <% end %>
     </div>
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "腹筋", type: "hidden"%>
-        <%= f.submit "腹筋", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "5"}, {class: "hidden"} %>
+        <%= f.submit "上腕三頭筋", class: "part_btn arm3"%>
       <% end %>
     </div>
     <div class="part_item">
-      <%= form_with(url: search_posts_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, value: "脚", type: "hidden"%>
-        <%= f.submit "脚", class: "part_btn"%>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "6"}, {class: "hidden"} %>
+        <%= f.submit "腹筋", class: "part_btn abs"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "7"}, {class: "hidden"} %>
+        <%= f.submit "尻・大臀筋", class: "part_btn hip"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "8"}, {class: "hidden"} %>
+        <%= f.submit "脚・大腿四頭筋", class: "part_btn leg"%>
       <% end %>
     </div>
   </div>

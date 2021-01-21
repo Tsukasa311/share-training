@@ -24,24 +24,13 @@
     display: flex;
     align-items: center;
   }
-  
-  .mypage_btn{
-    background-color: rgb(72, 124, 72);
+
+  .header_btn{
     padding: 20px;
     text-decoration: none;
     color: black;
   }
-  
-  .share_btn{
-    background-color: orange;
-    padding: 20px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .sign_btn{
-    background-color: rgb(59, 77, 240);
-    padding: 20px;
-    text-decoration: none;
-    color: black;
+
+  .header_btn:hover{
+    color: rgb(92, 92, 92);
   }

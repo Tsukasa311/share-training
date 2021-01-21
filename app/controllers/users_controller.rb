@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   def new
   end
 
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
   end
-  
+
   def edit
     @user = User.find(params[:id])
     @profile = @user.profile

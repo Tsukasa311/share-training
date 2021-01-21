@@ -3,21 +3,19 @@
 <%= form_with model: @post, url:  posts_path, local: true do |f|%>
   <div class="post_field">
     <div class="post_wrapper">
-      <div class="user_icon">icon
-      </div>
-      <div class="right_input_area">
+      <div class="post_input_area">
         <div class="post_text">
           <%= f.text_area :text, class: "text_area", placeholder: "トレーンングメニューをシェアしよう!!"%>
         </div>
         <div class="tag_field">
           <div class="tag_form">
-            <%= f.collection_select(:part_id, Part.all, :id, :name, {}, {class: "tag_decoration"}) %>
+            <%= f.collection_select(:part_id, Part.all, :id, :name, {include_blank: '部位を選択'}, {class: "tag_decoration"}) %>
           </div>
           <div class="tag_form">
-            <%= f.collection_select(:equipment_id, Equipment.all, :id, :name, {}, {class: "tag_decoration"}) %>
+            <%= f.collection_select(:equipment_id, Equipment.all, :id, :name, {include_blank: '器具を選択'}, {class: "tag_decoration"}) %>
           </div>
           <div class="tag_form">
-            <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class: "tag_decoration"}) %>
+            <%= f.collection_select(:place_id, Place.all, :id, :name, {include_blank: '場所を選択'}, {class: "tag_decoration"}) %>
           </div>
           <%# <%= f.text_field :name, id: "posts_tag_name", class: "input_tag", placeholder: "タグを入力してください"%>
         </div>
