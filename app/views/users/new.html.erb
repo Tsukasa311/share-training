@@ -1,2 +1,10 @@
-<%= link_to "メールアドレスで登録", new_user_registration_path%>
-<%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+<div class="sign_up_select_field">
+  <ul>
+    <li><%= link_to "メールアドレスで登録", new_user_registration_path, class: "sign_up_btn" %>
+    </li>
+    <li><%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: "sign_up_btn" %>
+    </li>
+</div>
+<div class="top_page_link">
+  <%= link_to "トップページへ戻る", root_path %>
+</div>

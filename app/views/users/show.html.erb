@@ -1,13 +1,5 @@
 <%= render "/shared/header" %>
 <div class="user_page_title">
-  <div class="more">
-    <span><%= image_tag 'arrow_top.png' %></span>
-    <ul class="more_lists">
-      <li>
-        <%= link_to "編集", edit_user_path, class: "show_btn" %>
-      </li>
-    </ul>
-  </div>
   Profile
 </div>
 <div class="user_top_wrapper">
@@ -16,6 +8,14 @@
       <div class="user_icon_wrapper">
       </div>
       <div class="user_info_lists">
+        <div class="pull_down_wrapper">
+          <span><%= image_tag 'arrow.png' %></span>
+          <div class="pull_down_child">
+            <div class="edit_btn_wrapper">
+              <%= link_to "編集", edit_user_path(@user.id), class: "edit_profile_btn" %>
+            </div>
+          </div>
+        </div>
         <ul>
           <li>ニックネーム：<span><%= @user.nickname %></span>
           </li>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="user_intro_wrapper">
-      <%= @user.profile.introduction %>
+      <%= safe_join(@user.profile.introduction.split("\n"),tag(:br)) %>
     </div>
   </div>
   <div class="user_right_wrapper">

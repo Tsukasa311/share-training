@@ -1,0 +1,24 @@
+    <div class="field">
+      <%= f.label :experience_id %><br />
+      <%= f.collection_select( :experience_id, Experience.all, :id, :name, {include_blank: '筋トレ歴を選択'}, {class: "input_box"}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :part_id %><br />
+      <%= f.collection_select( :part_id, Part.all, :id, :name, {include_blank: '部位を選択'}, {class: "input_box"}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :frequency_id %><br />
+      <%= f.collection_select( :frequency_id, Frequency.all, :id, :name, {include_blank: 'トレーニング頻度を選択'}, {class: "input_box"}) %>
+    </div>
+
+    <div class="introduction_field">
+      <%= f.label :introduction %> <br>
+      <%= f.text_area :introduction, placeholder: "自己紹介", class: "introduction_input_form" %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit "登録", class:"profile_next_btn" %>
+    </div>

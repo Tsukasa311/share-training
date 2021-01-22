@@ -1,27 +1,15 @@
-<%= form_with model: @profile, url: user_path(@user.id), method: :put,local: true do |f|%>
+<div class="user_info_form_title">
+  プロフィール編集
+</div>
+<div class="user_profile_form_wrapper">
+  <%= form_with model: @profile, url: user_path(@user.id), method: :put,local: true do |f|%>
 
-  <div class="field">
-     <%= f.label :experience_id %><br />
-     <%= f.collection_select( :experience_id, Experience.all, :id, :name, {}) %>
-  </div>
+  <%= render "shared/error_messages", model: f.object %>
 
-  <div class="field">
-     <%= f.label :part_id %><br />
-     <%= f.collection_select( :part_id, Part.all, :id, :name, {}) %>
-  </div>
+  <%= render "devise/registrations/profile_field" , { f: f } %>
 
-  <div class="field">
-     <%= f.label :frequency_id %><br />
-     <%= f.collection_select( :frequency_id, Frequency.all, :id, :name, {}) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :introduction %> <br>
-    <%= f.text_area :introduction, placeholder: "一言" %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "完了" %>
-  </div>
-<% end %>
+  <% end %>
+</div>
+<div class="top_page_link">
+  <%= link_to "マイページへ戻る", user_path(current_user.id) %>
+</div>

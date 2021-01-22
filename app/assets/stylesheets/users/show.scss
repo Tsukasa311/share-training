@@ -1,16 +1,17 @@
 .user_page_title{
-  background-color: rgb(148, 177, 221);
-  padding:20px 100px;
+  font-size: 24px;
+  margin: 20px 0 20px;
   text-align: center;
-  position: relative;
 }
 
 .user_top_wrapper{
-  background-color: darkgray;
-  padding: 40px 100px;
-  height: 500px;
-  width: 100vw;
+  padding: 60px;
+  height: 450px;
+  width: 1250px;
+  margin: 0 100px;
   display: flex;
+  border-top: solid 1px darkblue;
+  border-bottom: solid 1px darkblue;
 }
 
 .user_left_wrapper{
@@ -19,10 +20,10 @@
 }
 
 .user_icon_info_wrapper{
-  background-color: darkgray;
   height: 60%;
   width: 100%;
   display: flex;
+  border-bottom: solid 1px rgba(169, 169, 169, 0.527);
 }
 
 .user_icon_wrapper{
@@ -33,15 +34,57 @@
 }
 
 .user_info_lists{
-  background-color: rgb(223, 204, 165);
   height: 100%;
-  width: 70%;
-  padding-left: 25px;
+  width: 80%;
+  padding-left: 15px;
+  position: relative;
 }
 
+.pull_down_wrapper{
+  height: 20px;
+  width: 40px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  text-align: center;
+}
+
+.pull_down_wrapper:hover .edit_btn_wrapper{
+  display: block;
+}
+
+.pull_down_child{
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.edit_btn_wrapper{
+  background-color: rgb(232, 240, 254);
+  width: 70px;
+  border: 1px solid rgba(169, 169, 169, 0.479);
+  display: none;
+  text-align: center;
+}
+
+.edit_btn_wrapper:hover{
+  background-color: rgb(206, 223, 252);
+}
+
+.edit_profile_btn{
+  display: block;
+  padding: 10px 0;
+}
+
+.user_info_lists ul{
+  padding: 25px 20px 0;
+}
+
+
 .user_info_lists ul li{
-  font-size: 24px;
-  margin: 28px 0;
+  width: 80%;
+  font-size: 18px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -51,11 +94,11 @@
 }
 
 .user_intro_wrapper{
-  background-color: rgb(121, 101, 133);
   height: 40%;
   width: 100%;
   padding: 25px;
   font-size: 20px;
+  border-bottom: solid 1px rgba(169, 169, 169, 0.527);
 }
 
 .user_right_wrapper{

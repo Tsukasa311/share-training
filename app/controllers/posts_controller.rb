@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.valid?
       @post.save
+      flash[:notice] = "投稿が完了しました！"
       redirect_to root_path
     else
       render :new

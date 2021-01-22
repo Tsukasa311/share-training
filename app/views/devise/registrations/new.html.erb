@@ -1,16 +1,18 @@
-<h2>新規登録</h2>
-
+<div class="user_info_form_title">
+  <h2>新規登録</h2>
+</div>
+<div class="user_info_form_wrapper">
 <%= form_for(@user, url: user_registration_path) do |f| %>
   <%= render "devise/shared/error_messages", resource: @user %>
 
   <div class="field">
     <%= f.label :nickname %><br />
-    <%= f.text_field :nickname,maxlength: "30" %>
+    <%= f.text_field :nickname,maxlength: "30", class: "input_box" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input_box" %>
   </div>
 
   <%if @sns_id.present? %>
@@ -21,18 +23,24 @@
      <% @minimum_password_length %>
      <em>(<%= @minimum_password_length %> characters minimum)</em>
      <br />
-     <%= f.password_field :password, autocomplete: "new-password" %>
+     <%= f.password_field :password, autocomplete: "new-password", class: "input_box" %>
    </div>
 
    <div class="field">
      <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input_box" %>
    </div>
    <% end %>
 
   <div class="actions">
-    <%= f.submit "Next" %>
+    <%= f.submit "Next" ,class:"next_btn" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<% render "devise/shared/links" %>
+
+</div>
+
+<div class="top_page_link">
+  <%= link_to "トップページへ戻る", root_path %>
+</div>

@@ -28,7 +28,7 @@
 
 .search_form{
   background-color: rgb(232, 240, 254);
-  width: 920px;
+  width: 915px;
   height: 60px;
   border-radius: 40px;
   display: flex;
@@ -70,6 +70,8 @@
 
 .search_btn:hover{
   background-color: rgb(255, 167, 52);
+  transform: scale(1.2, 1.2);
+  transition: 0.4s;
 }
 
 .home_part{

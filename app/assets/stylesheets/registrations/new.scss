@@ -1,0 +1,65 @@
+.user_info_form_title{
+  height: 50px;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 24px;
+}
+
+.user_info_form_wrapper{
+  height: 400px;
+  width: 480px;
+  padding: 40px 80px;
+  margin: 0 auto 100px;
+  border: solid 1px darkgray;
+  box-shadow: 0 0 7px gray;
+}
+
+.field{
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.input_box{
+  width: 100%;
+  border-bottom: solid 1px darkgray;
+  padding:5px;
+}
+
+.input_box:hover{
+  border-bottom: solid 1px darkblue;
+}
+
+.next_btn{
+  background-color: rgb(232, 240, 254);
+  padding: 15px 40px;
+  margin: 0 auto;
+  display: block;
+  border: solid 1px darkgray;
+}
+
+.next_btn:hover{
+  background-color: rgb(206, 223, 252);
+  transition: 0.4s;
+}
+
+/*  ログイン画面  */
+
+.google_sign_in_wrapper{
+  margin-bottom: 40px;
+}
+
+.sign_in_google:hover{
+  color: darkblue;
+}
+
+.login-flash-message{
+  color: darkred;
+}
+
+#error_explanation ul li{
+  color: darkred;
+}
+
+#error_explanation h2{
+  color: darkred;
+}

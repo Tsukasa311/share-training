@@ -1,0 +1,32 @@
+.sign_up_select_field{
+  height: 205px;
+  width: 500px;
+  margin: 180px auto 100px;
+}
+
+.sign_up_select_field ul li{
+  background-color: rgb(232, 240, 254);
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.sign_up_btn{
+  height: 100%;
+  padding-top: 40px;
+  display: block;
+  text-align: center;
+  border: solid 1px darkgray;
+  box-shadow: 0 0 3px gray;
+}
+
+.sign_up_btn:hover{
+  background-color: rgb(206, 223, 252);
+}
+
+.top_page_link{
+  text-align: center;
+}
+
+.top_page_link:hover{
+  color: rgb(100, 100, 100);
+}
