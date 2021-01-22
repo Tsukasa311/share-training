@@ -37,7 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def profile_params
-    params.require(:profile).permit(:experience_id, :part_id, :frequency_id, :introduction)
+    params.require(:profile).permit(:experience_id, :part_id, :frequency_id, :introduction, :image)
   end
   # GET /resource/sign_up
   # def new

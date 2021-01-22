@@ -6,6 +6,7 @@
   <div class="user_left_wrapper">
     <div class="user_icon_info_wrapper">
       <div class="user_icon_wrapper">
+        <%= image_tag @user.profile.image.variant(resize: '150 x 250'), class: "profile_image" if @user.profile.image.attached? %>
       </div>
       <div class="user_info_lists">
         <div class="pull_down_wrapper">

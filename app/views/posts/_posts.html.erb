@@ -4,6 +4,7 @@
       <div class="user_wrapper">
         <div class="user_info">
           <div class="user_icon">
+            <%= image_tag post.user.profile.image.variant(resize: '150 x 250'), class: "post_user_image" if post.user.profile.image.attached? %>
           </div>
           <div class="user_name">
             <%= post.user.nickname%>

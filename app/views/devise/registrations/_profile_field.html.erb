@@ -1,3 +1,9 @@
+    <% if user_signed_in? %>
+      <div class="field">
+        <%= f.file_field :image %>
+      </div>
+    <% end %>
+    
     <div class="field">
       <%= f.label :experience_id %><br />
       <%= f.collection_select( :experience_id, Experience.all, :id, :name, {include_blank: '筋トレ歴を選択'}, {class: "input_box"}) %>
