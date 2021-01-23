@@ -125,10 +125,29 @@
 .tag_list_field{
   height: 40px;
   width: 100%;
+  position: relative;
 }
 
 .tag_list_field ul li{
   color: darkblue;
   display: inline-block;
   padding: 10px 0 10px 20px;
+}
+
+#muscle_count{
+  background-color: lightgray;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  display: flex;
+}
+
+.remove_like_btn{
+  background-color: rgb(90, 167, 144);
+  margin-left: 20px;
+}
+
+.like_btn{
+  background-color: rgb(158, 129, 129);
+  margin-left: 20px;
 }

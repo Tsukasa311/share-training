@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_one :profile
   has_many :sns_credentials
   has_many :posts
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 
   validates :nickname, presence: true, length: { maximum: 30 }
   validates :password,

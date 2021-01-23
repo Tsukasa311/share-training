@@ -7,7 +7,7 @@
             <%= image_tag post.user.profile.image.variant(resize: '150 x 250'), class: "post_user_image" if post.user.profile.image.attached? %>
           </div>
           <div class="user_name">
-            <%= post.user.nickname%>
+            <%= link_to post.user.nickname, user_path(post.user_id) %>
           </div>
         </div>
         <div class="user_introduction">
@@ -23,7 +23,7 @@
             </li>
             <% if current_user.id == post.user_id%>
               <li class="more_lists">
-                <%= link_to "削除", post_path(post.id), method: :delete, class: "show_btn" %>
+                <%= link_to "削除", post_path(post.id), method: :delete, class: "show_btn", data: { confirm: '本当に削除しますか？' }  %>
               </li>
             <% end %>
           </ul>
@@ -40,6 +40,16 @@
             <li>#<%= post.place.name %>
             </li>
           </ul>
+
+          <div id="muscle_count">
+            <h3>いいね: <%= post.likes.count %></h3>
+            <% if current_user.already_liked?(post) %>
+              <%= button_to 'いいねを取り消す', post_like_path(post.id, post.likes.ids), method: :delete, class: "remove_like_btn" %>
+            <% else %>
+              <%= button_to 'いいね', post_likes_path(post), class: "like_btn" %>
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>

@@ -6,13 +6,19 @@
   padding: 30px 0;
 }
 
-.list{
-  padding: 10px 0;
-  border-bottom: 1px solid rgb(167, 167, 173);
-  display: block;
-  background-color: lightpink;
+.liked_user_title{
+  margin: 20px 120px 10px;
 }
 
-.list:hover {
-  background-color: white;
+.liked_user_wrapper ul{
+  display: flex;
+  align-items: center;
+  margin: 10px 120px;
+}
+
+.liked_user_image{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
 }

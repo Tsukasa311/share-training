@@ -6,7 +6,7 @@
   <div class="user_left_wrapper">
     <div class="user_icon_info_wrapper">
       <div class="user_icon_wrapper">
-        <%= image_tag @user.profile.image.variant(resize: '150 x 250'), class: "profile_image" if @user.profile.image.attached? %>
+        <%= image_tag @user.profile.image, class: "profile_image" if @user.profile.image.attached? %>
       </div>
       <div class="user_info_lists">
         <div class="pull_down_wrapper">
@@ -43,3 +43,10 @@
 <% @posts.each do |post| %>
 <%= render "/posts/posts", { post: post} %>
 <% end %>
+
+<h3 class="user_page_title">いいねしている投稿</h3>
+<div class="liked_post_lists_wrapper">
+  <% @user.liked_posts.each do |post| %>
+    <%= render "/posts/posts", { post: post } %>
+  <% end %>
+</div>

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       get 'search'
       get 'tag_search'
     end
+    resources :likes, only: [:create, :destroy]
   end
 end
