@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @like = Like.new
+    # @like = Like.new
   end
 
   def destroy
