@@ -135,19 +135,43 @@
 }
 
 .muscle_count{
-  background-color: lightgray;
   position: absolute;
+  height: 40px;
   right: 20px;
-  top: 10px;
+  top: 0;
+}
+
+// .remove_like_btn{
+//   background-color: rgb(90, 167, 144);
+//   margin-left: 20px;
+// }
+
+// .like_btn{
+//   background-color: rgb(158, 129, 129);
+//   margin-left: 20px;
+// }
+.like_wrapper{
   display: flex;
+  align-items: center;
+  height: 40px;
 }
 
-.remove_like_btn{
-  background-color: rgb(90, 167, 144);
-  margin-left: 20px;
+.like_btn_icon{
+  background-image: image-url('before_like.png');
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
 }
 
-.like_btn{
-  background-color: rgb(158, 129, 129);
-  margin-left: 20px;
+.liked_btn_icon{
+  background-image: image-url('after_like.png');
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.like_count{
+  font-weight: bold;
 }
