@@ -7,12 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user)
   end
 
-  def index
-    @posts = Post.includes(:user).order(created_at: :desc)
-  end
-
   def search
-    @results = @p.result.includes(:user).order(created_at: :desc)
+    @results = @p.result.includes(:user, :likes).order(created_at: :desc)
   end
 
   def new
@@ -24,21 +20,20 @@ class PostsController < ApplicationController
     if @post.valid?
       @post.save
       flash[:notice] = "投稿が完了しました！"
-      redirect_to root_path
+      redirect_to controller: :users, action: :show, id: @post.user_id
     else
       render :new
     end
   end
 
   def show
-    # @like = Like.new
   end
 
   def destroy
     redirect_to root_path and return unless current_user.id == @post.user_id
 
     if @post.destroy
-      redirect_to root_path
+      redirect_to controller: :users, action: :show, id: @post.user_id
     else
       render :show
     end
@@ -51,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:text, :part_id, :equipment_id, :place_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:text, :part_id, :equipment_id, :place_id, :start_time).merge(user_id: current_user.id)
   end
 
   def search_post

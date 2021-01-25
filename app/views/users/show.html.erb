@@ -38,6 +38,15 @@
     </div>
   </div>
   <div class="user_right_wrapper">
+    <%= month_calendar events: @posts do |date, posts| %>
+      <%= date.day %>
+
+      <% posts.each do |post|%>
+        <div class="part_name_in_calendar">
+          <%= post.part.name %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 <div class="user_page_title">
