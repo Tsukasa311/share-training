@@ -13,14 +13,16 @@
         <% end %>
       </div>
       <div class="user_info_lists">
-        <div class="pull_down_wrapper">
-          <span><%= image_tag 'arrow.png' %></span>
-          <div class="pull_down_child">
-            <div class="edit_btn_wrapper">
-              <%= link_to "編集", edit_user_path(@user.id), class: "edit_profile_btn" %>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <div class="pull_down_wrapper">
+            <span><%= image_tag 'arrow.png' %></span>
+            <div class="pull_down_child">
+              <div class="edit_btn_wrapper">
+                <%= link_to "編集", edit_user_path(@user.id), class: "edit_profile_btn" %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
         <ul>
           <li>ニックネーム：<span><%= @user.nickname %></span>
           </li>
