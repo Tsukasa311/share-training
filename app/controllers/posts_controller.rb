@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:user)
+    @results = @p.result.includes(:user).order(created_at: :desc)
   end
 
   def new

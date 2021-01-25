@@ -4,7 +4,11 @@
       <div class="user_wrapper">
         <div class="user_info">
           <div class="user_icon">
-            <%= image_tag post.user.profile.image.variant(resize: '150 x 250'), class: "post_user_image" if post.user.profile.image.attached? %>
+            <% if post.user.profile.image.attached?%>
+              <%= image_tag post.user.profile.image.variant(resize: '150 x 250'), class: "post_user_image" %>
+            <% else %>
+              <%= image_tag "default.png", class: "post_user_image"%>
+            <% end %>
           </div>
           <div class="user_name">
             <%= link_to post.user.nickname, user_path(post.user_id) %>

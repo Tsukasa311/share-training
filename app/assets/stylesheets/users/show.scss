@@ -29,13 +29,16 @@
 .user_icon_wrapper{
   height: 100%;
   width: 30%;
-  padding: 10px;
 }
 
 .profile_image{
   border-radius: 50%;
-  height: 120px;
+  display: block;
+  object-fit: cover;
+  border: solid 1px darkgray;
   width: 120px;
+  height: 120px;
+  margin: 30px auto 0;
 }
 
 .user_info_lists{
