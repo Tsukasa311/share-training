@@ -6,7 +6,7 @@
 
 <%= render "posts", { post: @post } %>
 <div class="liked_user_wrapper">
-  <h2 class="liked_user_title">いいねしたユーザー</h2>
+  <h2 class="liked_user_title">NiceTrainingしたユーザー</h2>
   <% @post.liked_users.each do |user| %>
     <ul>
       <% if user.profile.image.attached? %>

@@ -6,7 +6,7 @@
 
 .user_top_wrapper{
   padding: 60px;
-  height: 450px;
+  height: 500px;
   width: 1250px;
   margin: 0 100px 50px;
   display: flex;
@@ -18,10 +18,11 @@
   height: 100%;
   width: 100%;
   padding-right: 20px;
+  border-right: darkgray solid 1px;
 }
 
 .user_icon_info_wrapper{
-  height: 60%;
+  height: 50%;
   width: 100%;
   display: flex;
   border-bottom: solid 1px rgba(169, 169, 169, 0.527);
@@ -37,15 +38,15 @@
   display: block;
   object-fit: cover;
   border: solid 1px darkgray;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   margin: 30px auto 0;
 }
 
 .user_info_lists{
   height: 100%;
   width: 80%;
-  padding-left: 15px;
+  padding-left: 10px;
   position: relative;
 }
 
@@ -93,8 +94,8 @@
 
 .user_info_lists ul li{
   width: 87%;
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -103,15 +104,15 @@
   left: 55%;
 }
 
-.user_intro_wrapper{
-  height: 40%;
+.user_chart_wrapper{
+  height: 50%;
   width: 100%;
-  padding: 25px;
-  font-size: 20px;
+  padding-top: 20px;
   border-bottom: solid 1px rgba(169, 169, 169, 0.527);
 }
 
 .user_right_wrapper{
   height: 100%;
   width: 100%;
+  padding-left: 20px;
 }

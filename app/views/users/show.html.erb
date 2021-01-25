@@ -26,17 +26,19 @@
         <ul>
           <li>ニックネーム：<span><%= @user.nickname %></span>
           </li>
-          <li>筋トレ歴：<span><%= @user.profile.Experience.name%></span>
+          <li>筋トレ歴：<span><%= @user.profile.experience.name%></span>
           </li>
-          <li>鍛えたい部位：<span><%= @user.profile.Part.name%></span>
+          <li>鍛えたい部位：<span><%= @user.profile.part.name%></span>
           </li>
-          <li>トレーニング頻度：<span><%= @user.profile.Frequency.name%></span>
+          <li>トレーニング頻度：<span><%= @user.profile.frequency.name%></span>
           </li>
         </ul>
       </div>
     </div>
-    <div class="user_intro_wrapper">
-      <%= safe_join(@user.profile.introduction.split("\n"),tag(:br)) %>
+    <div class="user_chart_wrapper">
+      <div class="pie_chart">
+        <%= pie_chart ({"大胸筋" => @array.count(1), "広背筋・僧帽筋" => @array.count(2), "肩・三角筋" => @array.count(3), "上腕二頭筋" => @array.count(4), "上腕三頭筋" => @array.count(5), "腹筋" => @array.count(6), "尻・大臀筋" => @array.count(7), "脚・大腿四頭筋" => @array.count(8) }), height: "150px", width: "580px" %>
+      </div>
     </div>
   </div>
   <div class="user_right_wrapper">
@@ -59,7 +61,7 @@
 <%= render "/posts/posts", { post: post} %>
 <% end %>
 
-<h3 class="user_page_title">いいねしている投稿</h3>
+<h3 class="user_page_title">NiceTrainingしている投稿</h3>
 <div class="liked_post_lists_wrapper">
   <% @user.liked_posts.each do |post| %>
     <%= render "/posts/posts", { post: post } %>

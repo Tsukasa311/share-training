@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="hidden">
-        <%= f.datetime_select :start_time %>
+        <%= f.datetime_select :start_time ,{default: Date.today} %>
       </div>
       <div class="post_btn">
         <%= f.submit "投稿する", class: "submit_btn"%>

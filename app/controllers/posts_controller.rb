@@ -16,9 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    unless current_user.id == @post.user_id
-      redirect_to root_path
-    end
     @post = Post.new(post_params)
     if @post.valid?
       @post.save

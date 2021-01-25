@@ -10,7 +10,7 @@ class Profile < ApplicationRecord
   end
   
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :Frequency
-  belongs_to :Part
-  belongs_to :Experience
+  belongs_to :frequency
+  belongs_to :part
+  belongs_to :experience
 end
