@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, length: { maximum: 30 }
   validates :password,
-            format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze, message: 'Include both letters and numbers' }
+            format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze, message: '半角英数字を含める必要があります' }
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create

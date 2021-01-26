@@ -1,25 +1,23 @@
 .post_field{
   background-color: rgb(240, 239, 239);
   box-shadow: 0 0 7px gray;
-  height: 500px;
   width: 1000px;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
+  padding: 80px 50px 80px;
 }
 
 .post_wrapper{
-  height: 100%;
   margin: 0 50px;
-  padding: 80px 50px 0px;
+  padding-bottom: 50px;
 }
 
 .post_input_area{
-  height: 70%;
   width: 100%;
 }
 
 .post_text{
   background-color: white;
-  height: 70%;
+  height: 200px;
   width: 100%;
   margin-bottom: 20px;
 }
@@ -30,6 +28,10 @@
   width: 100%;
   word-break: break-all;
   padding: 20px;
+}
+
+textarea{
+  resize: none;
 }
 
 .tag_field{
@@ -62,6 +64,7 @@
   height: 60px;
   width: 120px;
   float: right;
+  margin-top: 20px;
 }
 
 .post_btn:hover{

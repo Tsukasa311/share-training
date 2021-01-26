@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      profile: プロフィール
+    attributes:
+      profile:
+        experience_id: 筋肉トレーニング経験
+        part_id: 特に鍛えたい部位
+        frequency_id: トレーニング目標頻度
+        introduction: 自己紹介
+      post:
+        text: テキスト
+        part_id: 部位
+        equipment_id: 器具
+        place_id: 場所

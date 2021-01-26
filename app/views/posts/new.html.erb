@@ -7,7 +7,7 @@
       <%= render "shared/error_messages", model: f.object %>
       <div class="post_input_area">
         <div class="post_text">
-          <%= f.text_area :text, class: "text_area", placeholder: "トレーンングメニューをシェアしよう!!"%>
+          <%= f.text_area :text,class: "text_area", placeholder: "トレーンングメニューをシェアしよう!!"%>
         </div>
         <div class="tag_field">
           <div class="tag_form">
@@ -20,12 +20,12 @@
             <%= f.collection_select(:place_id, Place.all, :id, :name, {include_blank: '場所を選択'}, {class: "tag_decoration"}) %>
           </div>
         </div>
+        <div class="post_btn">
+          <%= f.submit "投稿する", class: "submit_btn"%>
+        </div>
       </div>
       <div class="hidden">
         <%= f.datetime_select :start_time ,{default: Date.today} %>
-      </div>
-      <div class="post_btn">
-        <%= f.submit "投稿する", class: "submit_btn"%>
       </div>
     </div>
   </div>

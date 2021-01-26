@@ -3,10 +3,10 @@ class Profile < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :experience_id, numericality: { other_than: 0 }
-    validates :part_id, numericality: { other_than: 0 }
-    validates :frequency_id,  numericality: { other_than: 0 }
-    validates :introduction,  length: { maximum: 250 }
+    validates :experience_id, numericality: { only_integer: true }
+    validates :part_id, numericality: { only_integer: true  }
+    validates :frequency_id,  numericality: { only_integer: true }
+    validates :introduction,  length: { maximum: 100 }
   end
   
   extend ActiveHash::Associations::ActiveRecordExtensions
