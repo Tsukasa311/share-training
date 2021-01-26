@@ -11,9 +11,9 @@ class Post < ApplicationRecord
   belongs_to :place
 
   with_options presence: true do
-    validates :text
-    validates :part_id,       numericality: { other_than: 0 }
-    validates :equipment_id,  numericality: { other_than: 0 }
-    validates :place_id,      numericality: { other_than: 0 }
+    validates :text,  length: { maximum: 210 }
+    validates :part_id,       numericality: { only_integer: true, message: "が未選択になっています"}
+    validates :equipment_id,  numericality: { only_integer: true, message: "が未選択になっています"}
+    validates :place_id,      numericality: { only_integer: true, message: "が未選択になっています"}
   end
 end

@@ -3,9 +3,9 @@ class Profile < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :experience_id, numericality: { only_integer: true }
-    validates :part_id, numericality: { only_integer: true  }
-    validates :frequency_id,  numericality: { only_integer: true }
+    validates :experience_id, numericality: { only_integer: true, message: "が未選択になっています"}
+    validates :part_id, numericality: { only_integer: true, message: "が未選択になっています"  }
+    validates :frequency_id,  numericality: { only_integer: true, message: "が未選択になっています" }
     validates :introduction,  length: { maximum: 100 }
   end
   
