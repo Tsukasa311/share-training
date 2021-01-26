@@ -1,15 +1,14 @@
 .user_profile_form_wrapper{
-  height: 430px;
   width: 480px;
   padding: 40px 80px;
-  margin: 0 auto 70px;
+  margin: 0 auto 40px;
   border: solid 1px darkgray;
   box-shadow: 0 0 7px gray;
 }
 
 .introduction_field{
   height: 80px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .introduction_input_form{
@@ -22,7 +21,7 @@
 .profile_next_btn{
   background-color: rgb(232, 240, 254);
   padding: 15px 40px;
-  margin: 0 auto;
+  margin: 0 auto ;
   display: block;
   border: solid 1px darkgray;
 }
@@ -32,3 +31,6 @@
   transition: 0.4s;
 }
 
+.image_btn{
+  margin-top: 6px;
+}

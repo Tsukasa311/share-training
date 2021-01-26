@@ -1,27 +1,28 @@
     <% if user_signed_in? %>
       <div class="field">
-        <%= f.file_field :image %>
+        <%= f.label :image, "プロフィール画像 (jpeg/jpg/png)"%>
+        <%= f.file_field :image, class:"image_btn" %>
       </div>
     <% end %>
     
     <div class="field">
-      <%= f.label :experience_id %><br />
-      <%= f.collection_select( :experience_id, Experience.all, :id, :name, {include_blank: '筋トレ歴を選択'}, {class: "input_box"}) %>
+      <%= f.label :experience_id, "筋肉トレーニング経験" %><br />
+      <%= f.collection_select( :experience_id, Experience.all, :id, :name, {include_blank: '未選択'}, {class: "input_box"}) %>
     </div>
 
     <div class="field">
-      <%= f.label :part_id %><br />
-      <%= f.collection_select( :part_id, Part.all, :id, :name, {include_blank: '部位を選択'}, {class: "input_box"}) %>
+      <%= f.label :part_id, "特に鍛えたい部位" %><br />
+      <%= f.collection_select( :part_id, Part.all, :id, :name, {include_blank: '未選択'}, {class: "input_box"}) %>
     </div>
 
     <div class="field">
-      <%= f.label :frequency_id %><br />
-      <%= f.collection_select( :frequency_id, Frequency.all, :id, :name, {include_blank: 'トレーニング頻度を選択'}, {class: "input_box"}) %>
+      <%= f.label :frequency_id, "トレーニング目標頻度" %><br />
+      <%= f.collection_select( :frequency_id, Frequency.all, :id, :name, {include_blank: '未選択'}, {class: "input_box"}) %>
     </div>
 
     <div class="introduction_field">
-      <%= f.label :introduction %> <br>
-      <%= f.text_area :introduction, placeholder: "自己紹介", class: "introduction_input_form" %>
+      <%= f.label :introduction, "自己紹介" %> <br>
+      <%= f.text_area :introduction, placeholder: "未入力", class: "introduction_input_form" %>
     </div>
 
 

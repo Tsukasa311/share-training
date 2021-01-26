@@ -6,12 +6,12 @@
   <%= render "devise/shared/error_messages", resource: @user %>
 
   <div class="field">
-    <%= f.label :nickname %><br />
+    <%= f.label :nickname, "ニックネーム(必須)" %><br />
     <%= f.text_field :nickname,maxlength: "30", class: "input_box" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "メールアドレス(必須)" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input_box" %>
   </div>
 
@@ -19,21 +19,20 @@
      <%= hidden_field_tag :sns_auth, true %>
    <% else %>
    <div class="field">
-     <%= f.label :password %>
+     <%= f.label :password, "パスワード(半角英数含 6文字以上)" %>
      <% @minimum_password_length %>
-     <em>(<%= @minimum_password_length %> characters minimum)</em>
      <br />
      <%= f.password_field :password, autocomplete: "new-password", class: "input_box" %>
    </div>
 
    <div class="field">
-     <%= f.label :password_confirmation %><br />
+     <%= f.label :password_confirmation, "パスワード確認" %><br />
      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input_box" %>
    </div>
    <% end %>
 
   <div class="actions">
-    <%= f.submit "Next" ,class:"next_btn" %>
+    <%= f.submit "次へ" ,class:"next_btn" %>
   </div>
 <% end %>
 

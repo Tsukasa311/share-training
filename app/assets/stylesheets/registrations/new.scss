@@ -1,15 +1,14 @@
 .user_info_form_title{
   height: 50px;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
   font-size: 24px;
 }
 
 .user_info_form_wrapper{
-  height: 400px;
   width: 480px;
   padding: 40px 80px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
   border: solid 1px darkgray;
   box-shadow: 0 0 7px gray;
 }
@@ -53,7 +52,12 @@
 }
 
 .login-flash-message{
+  padding-bottom: 20px;
   color: darkred;
+}
+
+#error_explanation ul {
+  margin-bottom: 10px;
 }
 
 #error_explanation ul li{
@@ -62,4 +66,5 @@
 
 #error_explanation h2{
   color: darkred;
+  margin-bottom: 10px;
 }
