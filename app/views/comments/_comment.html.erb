@@ -7,7 +7,7 @@
           <li class="comment"><%= safe_join(comment.text.split("\n"),tag(:br)) %>
           </li>
           <% if current_user.id == comment.user.id %>
-            <li><%= link_to "コメントを削除", post_comment_path(@post.id,comment.id), method: :delete, class: "comment_delete" %>
+            <li><%= link_to "コメントを削除", post_comment_path(@post.id,comment.id), method: :delete, class: "comment_delete", remote: true %>
           <% end %>
         </ul>
       <% end %>
