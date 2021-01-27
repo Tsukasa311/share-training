@@ -13,6 +13,8 @@
 
 .liked_user_wrapper{
   width: 30%;
+  border-right: darkgray 1px solid;
+  margin-right: 20px;
 }
 
 .liked_user_title{
@@ -22,6 +24,10 @@
 .liked_user_wrapper ul{
   display: flex;
   align-items: center;
+}
+
+.liked_user_wrapper ul li{
+  margin-bottom: 5px;
 }
 
 .liked_user_image{
@@ -42,12 +48,50 @@
 }
 
 .comennts_form{
-  background-color: darkgray;
-  height: 80px;
-  padding: 20px;
   margin-bottom: 20px;
+  padding: 15px;
+}
+
+.comment_area{
+  border: darkgray solid 1px;
+  box-shadow: 0 0 2px darkgray;
+  height: 80px;
+  width: 85%;
+  padding:10px;
+}
+
+.comment_btn{
+  background-color: rgb(255, 223, 181);
+  border: darkgray solid 1px;
+  color: rgb(88, 88, 88);
+  text-align: center;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.comment_btn:hover{
+  background-color: rgba(255, 167, 52, 0.712);
+  color: black;
 }
 
 .comments_list_title{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.comments_list{
+  width: 100%;
+}
+
+.comments_list ul{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.comments_list li{
+  margin-bottom: 5px;
+}
+
+.comment{
+  margin-left: 20px;
 }
