@@ -23,24 +23,15 @@
     <% if user_signed_in? %>
       <h2 class="comments_form_title">コメントする</h2>
       <div class="comennts_form">
-        <%= form_with model: [@post, @comment], url: post_comments_path(@post.id),local: true do |f|%>
-          <%= f.text_area :text, placeholder: "例）１セットの回数はどうやって決めていますか？", rows: "3" , class: "comment_area"%>
-          <%= f.submit "投稿する", class: "comment_btn"%>
+        <%= form_with model: [@post, @comment], url: post_comments_path(@post.id) do |f|%>
+          <%= f.text_area :text,id: "comment_content", placeholder: "例）１セットの回数はどうやって決めていますか？", rows: "3" , class: "comment_area"%>
+          <%= f.submit "投稿する", class: "comment_btn", id: "comment_submit" %>
         <% end %>
     <% end %>
     </div>
     <h2 class="comments_list_title">コメント一覧</h2>
-    <div class="comments_list">
-      <% @comments.each do |comment|%>
-        <ul>
-          <li><%= image_tag comment.user.profile.image, class: "liked_user_image" %></li>
-          <li><%= link_to comment.user.nickname, user_path(comment.user.id) %></li>
-          <li class="comment"><%= safe_join(comment.text.split("\n"),tag(:br)) %></li>
-          <% if current_user.id == comment.user.id %>
-            <li><%= link_to "コメントを削除", post_comment_path(@post.id,comment.id), method: :delete, class: "comment_delete" %>
-          <% end %>
-        </ul>
-      <% end %>
+    <div class="comments_list", id="add_comment">
+      <%= render "comments/comment" , { comments: @comments } %>
     </div>
   </div>
 </div>

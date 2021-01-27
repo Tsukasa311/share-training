@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to controller: :posts, action: :show, id: params[:post_id]
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.includes(:user)
   end
   
   def destroy
