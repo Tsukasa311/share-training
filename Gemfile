@@ -46,10 +46,6 @@ group :development do
   gem 'rubocop', require: false
 end
 
-group :production do
-  gem 'unicorn', "5.4.1"
-end
-
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
