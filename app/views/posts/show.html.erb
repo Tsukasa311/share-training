@@ -10,14 +10,12 @@
     <%= render "like_list", { post: @post } %>
   </div>
   <div class="comments_wrapper">
-    <% if user_signed_in? %>
-      <h2 class="comments_form_title">コメントする</h2>
-      <div class="comennts_form">
-        <%= form_with model: [@post, @comment], url: post_comments_path(@post.id) do |f|%>
-          <%= f.text_area :text,id: "comment_content", placeholder: "例）１セットの回数はどうやって決めていますか？", rows: "3" , class: "comment_area"%>
-          <%= f.submit "投稿する", class: "comment_btn", id: "comment_submit" %>
-        <% end %>
-    <% end %>
+    <h2 class="comments_form_title">コメントする</h2>
+    <div class="comennts_form">
+      <%= form_with model: [@post, @comment], url: post_comments_path(@post.id) do |f|%>
+        <%= f.text_area :text,id: "comment_content", placeholder: "例）１セットの回数はどうやって決めていますか？", rows: "3" , class: "comment_area"%>
+        <%= f.submit "投稿する", class: "comment_btn", id: "comment_submit" %>
+      <% end %>
     </div>
     <h2 class="comments_list_title">コメント一覧</h2>
     <div class="comments_list", id="add_comment">

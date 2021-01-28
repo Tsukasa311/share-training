@@ -1,7 +1,11 @@
 <% comments.each do |comment|%>
   <ul>
-    <li><%= image_tag comment.user.profile.image, class: "liked_user_image" %>
-    </li>
+    <% if comment.user.profile.image.attached? %>
+      <li><%= image_tag comment.user.profile.image, class: "liked_user_image" %>
+      </li>
+    <% else %>
+      <li><%= image_tag "default.png", class: "liked_user_image"%></li>
+    <% end %>
     <li><%= link_to comment.user.nickname, user_path(comment.user.id) %>
     </li>
     <li class="comment"><%= safe_join(comment.text.split("\n"),tag(:br)) %>
