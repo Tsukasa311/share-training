@@ -45,7 +45,8 @@ basic認証
 - Rails 6.0.3.4
 
 # ER図
-![share-training](https://user-images.githubusercontent.com/70062121/106222203-66eab500-6222-11eb-99fe-abc3aa515661.png)
+![share-training](https://user-images.githubusercontent.com/70062121/106222639-4bcc7500-6223-11eb-87fe-43cdb0947839.png)
+
 # usersテーブル
 | Column        | Type           | Option                         |
 |---------------|----------------|--------------------------------|
