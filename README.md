@@ -28,10 +28,10 @@ basic認証
 コメントフォームの下には、投稿に対して行われたコメントが一覧で表示される。
 # 目指した課題解決
 「世の中の人が、どういったメニューで日々の筋肉トレーニングを行っているのか知りたい」という課題
-「日々のトレーニング成果を記録したい」という課題
 # 洗い出した要件
+
 # 実装した機能
-- ユーザー管理　https://gyazo.com/e97f9741831aba026e60df1f1cc71cbf
+- ユーザー管理
 - SNS認証（Google）
 - 投稿の保存・削除
 - 複雑検索
@@ -39,12 +39,10 @@ basic認証
 - コメント保存・削除
 - カレンダー
 - グラフ化
-# 実装予定の機能
-# データベース設計
-# ローカルでの動作方法
 
-
-
+# 開発環境
+- Ruby 2.6.5
+- Rails 6.0.3.4
 
 # usersテーブル
 | Column        | Type           | Option                         |
@@ -95,24 +93,3 @@ comment belongs_to :post
 belongs_to :user
 post has_many :post_tags
 post has_many :tags, through: :post_tags
-
-
-# tagsテーブル
-| Column        | Type          | Option                         |
-|---------------|---------------|--------------------------------|
-| name          | string        | null: false, uniqueness: true  |
-
-## association
-tag has_many :pots_tags
-tag has_many :posts, through: :post_tags
-
-
-# post_tag_relationテーブル
-| Column        | Type          | Option                         |
-|---------------|---------------|--------------------------------|
-| post_id       | references    | null: false, foreign_key: true |
-| tag_id        | references    | null: false, foreign_key: true |
-
-## association
-post_tag belongs_to :post
-post_tag belongs_to :tag
