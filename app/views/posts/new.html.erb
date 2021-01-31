@@ -7,7 +7,8 @@
       <%= render "shared/error_messages", model: f.object %>
       <div class="post_input_area">
         <div class="post_text">
-          <%= f.text_area :text,class: "text_area", placeholder: "トレーンングメニューをシェアしよう!!"%>
+          <%= f.text_area :text,class: "text_area", id: "text_area_id", placeholder: "トレーンングメニューをシェアしよう!!"%>
+          <div class="text_count", id="text_counting">0文字</div>
         </div>
         <div class="tag_field">
           <div class="tag_form">

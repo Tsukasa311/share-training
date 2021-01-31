@@ -19,6 +19,14 @@
   height: 180px;
   width: 100%;
   margin-bottom: 20px;
+  position: relative;
+  color: rgb(121, 121, 121);
+}
+
+.text_count{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
 }
 
 .text_area{
