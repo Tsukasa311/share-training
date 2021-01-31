@@ -19,7 +19,9 @@
     </div>
 
     <div class="google_sign_in_wrapper">
-      <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class: "sign_in_google"%>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %>
+        <%= image_tag "btn_google_signin_light_normal_web.png", class: "sign_in_google" %>
+      <% end %>
     </div>
 
     <div class="actions">
