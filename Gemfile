@@ -69,3 +69,4 @@ gem 'simple_calendar', '~> 2.0'
 gem 'chartkick'
 gem 'rails-i18n'
 gem 'aws-sdk-s3', require: false
+gem 'capybara', '>= 2.15'
