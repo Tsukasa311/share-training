@@ -34,7 +34,13 @@ RSpec.describe "トレーニング投稿", type: :system do
 
   context 'トレーニング投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
-      
+      # トップページに移動する
+      visit root_path
+      # 新規投稿ページに移動しようとすると、ログインページに遷移することを確認する
+      visit new_post_path
+      expect(current_path).to eq "/users/sign_in"
     end
   end
 end
+
+
