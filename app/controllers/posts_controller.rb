@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.valid?
       @post.save
-      flash[:notice] = "投稿が完了しました！"
+      flash[:post_notice] = "投稿が完了しました！"
       redirect_to controller: :users, action: :show, id: @post.user_id
     else
       render :new
