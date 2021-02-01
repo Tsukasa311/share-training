@@ -88,6 +88,10 @@ RSpec.describe 'トレーニング投稿削除', type: :system do
       # トレーニング２に「削除」ボタンがないことを確認する
       expect(all(".more")[0].hover).to have_no_link '削除', href: "/posts/#{@post1.id}"
     end
+    it 'ログインしていないとき' do
+      visit user_path(@post1.user_id)
+      expect(current_path).to eq "/users/sign_in"
+    end
   end
 end
 

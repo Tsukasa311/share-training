@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, except: :new
-
+  before_action :authenticate_user!, only: [:show, :edit, :update]
   def new
   end
 
