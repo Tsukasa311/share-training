@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe "ユーザー新規登録", type: :system do
   before do
    @user = FactoryBot.build(:user)
   end
@@ -38,9 +38,9 @@ RSpec.describe "Users", type: :system do
       # トップページに移動する
       visit root_path
       # 「マイページ」「Shareする」「ログアウト」ボタンが表示されることを確認する
-     expect(page).to have_content('マイページ')
-     expect(page).to have_content('Shareする')
-     expect(page).to have_content('ログアウト')
+      expect(page).to have_content('マイページ')
+       expect(page).to have_content('Shareする')
+      expect(page).to have_content('ログアウト')
       # 「ログイン」「新規登録」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
       expect(page).to have_no_content('ログイン')
@@ -68,7 +68,6 @@ RSpec.describe "Users", type: :system do
       # 「次へ」のボタンを押しても画面は遷移しないことを確認する
       find('input[name="commit"]').click
       expect(current_path).to eq "/users"
-      expect(current_path).to eq "/users"
       # ユーザー情報を入力する(正しく)
       fill_in 'user_nickname', with: @user.nickname
       fill_in 'user_email', with: @user.email
@@ -87,6 +86,48 @@ RSpec.describe "Users", type: :system do
       expect{find('input[name="commit"]').click}.to change { User.count}.by(0)
       # プロフィール登録ページへ戻されることを確認する
       expect(current_path).to eq "/profiles"
+    end
+  end
+end
+
+RSpec.describe 'ユーザーログイン', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  context 'ログインできるとき' do
+    it '保存されているユーザー情報と合致したときログインができる' do
+      # トップページに移動する
+      visit root_path
+      # トップページに「ログイン」ボタンがあることを確認する
+      expect(page).to have_content('ログイン')
+      # ログインページに遷移する
+      visit new_user_session_path
+      # 正しいユーザー情報を入力する
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
+      # 「ログイン」ボタンを押す
+      find("input[name='commit']").click
+      # トップページに遷移することを確認する
+      expect(current_path).to eq root_path
+      #「マイページ」「Shareする」「ログアウト」ボタンが表示されることを確認する
+      expect(page).to have_content('マイページ')
+      expect(page).to have_content('Shareする')
+      expect(page).to have_content('ログアウト')
+      # 「ログイン」「新規登録」ボタンが表示されていないことを確認する
+      expect(page).to have_no_content('新規登録')
+      binding.pry
+      expect(page).to have_no_content('ログイン')
+    end
+  end
+  context 'ログインできないとき' do
+    it '保存されているユーザー情報と合致しないときログインができない' do
+      # トップページに移動する
+      # トップページに「ログイン」ボタンがあることを確認する
+      # ログインページに遷移する
+      # ユーザー情報を入力する
+      # 「ログイン」ボタンを押す
+      # ログインページに戻されることを確認する
     end
   end
 end
