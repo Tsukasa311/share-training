@@ -5,6 +5,6 @@ FactoryBot.define do
     equipment_id    {Faker::Number.between(from: 1, to: 5)}
     place_id        {Faker::Number.between(from: 1, to: 2)}
    
-    association  :user
+    association :user
   end
 end

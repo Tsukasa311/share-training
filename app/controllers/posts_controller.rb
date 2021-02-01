@@ -35,6 +35,7 @@ class PostsController < ApplicationController
     redirect_to root_path and return unless current_user.id == @post.user_id
 
     if @post.destroy
+      flash[:post_notice] = "投稿を削除しました！"
       redirect_to controller: :users, action: :show, id: @post.user_id
     else
       render :show

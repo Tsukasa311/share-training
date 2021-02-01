@@ -43,4 +43,43 @@ RSpec.describe "トレーニング投稿", type: :system do
   end
 end
 
+RSpec.describe 'トレーニング投稿削除', type: :system do
+  before do
+    @post1 = FactoryBot.create(:post)
+    @post2 = FactoryBot.create(:post)
+  end
+  
+  context 'トレーニング投稿が削除できるとき' do
+    it 'ログインしたユーザーは自らが投稿したトレーニング投稿を削除できる' do
+      # トレーニング１を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
+      find("input[name='commit']").click
+      expect(current_path).to eq root_path
+      # マイページに移動する
+      visit user_path(@post1.user_id)
+      # トレーニング１に「削除」ボタンがあることを確認する
+      expect(all(".more")[0].hover).to have_link '削除', href: "/posts/#{@post1.id}"
+      # 投稿を削除すると、レコードが１減ることを確認する
+      expect{
+      page.accept_confirm do
+        all(".more")[0].hover.click_link('削除', href: post_path(@post1.id))
+      end
+      expect(page).to have_content('投稿を削除しました！')
+      }.to change { Post.count }.by(-1)
+      # マイページに遷移したことを確認する
+      expect(current_path).to eq user_path(@post1.user.id)
+      # マイページにトレーニング１が存在しないことを確認する
+      expect(page).to have_no_content(@post1.text)
+    end
+  end
+
+  context 'トレーニング投稿が削除できないとき' do
+    it 'ログインしたユーザーは自分以外のトレーニング投稿を削除できない' do
+      
+    end
+  end
+end
+
 
