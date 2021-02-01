@@ -116,18 +116,24 @@ RSpec.describe 'ユーザーログイン', type: :system do
       expect(page).to have_content('ログアウト')
       # 「ログイン」「新規登録」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
-      binding.pry
       expect(page).to have_no_content('ログイン')
     end
   end
   context 'ログインできないとき' do
     it '保存されているユーザー情報と合致しないときログインができない' do
       # トップページに移動する
+      visit root_path
       # トップページに「ログイン」ボタンがあることを確認する
+      expect(page).to have_content('ログイン')
       # ログインページに遷移する
+      visit new_user_session_path
       # ユーザー情報を入力する
+      fill_in 'user_email', with: ""
+      fill_in 'user_password', with: ""
       # 「ログイン」ボタンを押す
+      find("input[name='commit']").click
       # ログインページに戻されることを確認する
+      expect(current_path).to eq "/users/sign_in"
     end
   end
 end
