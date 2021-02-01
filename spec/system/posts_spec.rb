@@ -77,7 +77,16 @@ RSpec.describe 'トレーニング投稿削除', type: :system do
 
   context 'トレーニング投稿が削除できないとき' do
     it 'ログインしたユーザーは自分以外のトレーニング投稿を削除できない' do
-      
+      # トレーニング１を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
+      find("input[name='commit']").click
+      expect(current_path).to eq root_path
+      # トレーニング2を投稿したユーザーのマイページに移動する
+      visit user_path(@post2.user_id)
+      # トレーニング２に「削除」ボタンがないことを確認する
+      expect(all(".more")[0].hover).to have_no_link '削除', href: "/posts/#{@post1.id}"
     end
   end
 end
