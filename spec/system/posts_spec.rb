@@ -103,7 +103,20 @@ RSpec.describe 'トレーニング投稿詳細', type: :system do
 
   context 'トレーニング詳細ページに移動できるとき' do
     it 'ログインしているとき' do
-      
+      # ログインする
+      visit new_user_session_path
+      fill_in 'user[email]', with: @post.user.email
+      fill_in 'user[password]', with: @post.user.password
+      find("input[name='commit']").click
+      expect(current_path).to eq root_path
+      # マイページに移動する
+      visit user_path(@post.user_id)
+      # トレーニング投稿に「詳細」ボタンがあることを確認する
+      expect(all(".more")[0].hover).to have_link '詳細', href: "/posts/#{@post.id}"
+      # 詳細ページに遷移する
+      visit post_path(@post.id)
+      # 詳細ページに移動したことを確認する
+      expect(page).to have_content('投稿詳細')
     end
   end
 
