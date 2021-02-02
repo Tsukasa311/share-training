@@ -11,9 +11,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @user.id
-      redirect_to action: :show,id: @user.id
-    end
+    redirect_to action: :show,id: @user.id and return unless current_user.id == @user.id
     @profile = @user.profile
   end
 
