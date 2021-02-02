@@ -11,6 +11,6 @@ class Part < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :Profiles
+  has_many :profiles
   has_many :posts
 end

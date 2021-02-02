@@ -7,5 +7,5 @@ class Frequency < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :Profiles
+  has_many :profiles
 end
