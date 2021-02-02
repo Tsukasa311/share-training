@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post_comments
-
+  
   def create
     @comment = Comment.create(comment_params)
   end
