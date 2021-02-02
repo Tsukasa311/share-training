@@ -18,6 +18,6 @@ class CommentsController < ApplicationController
 
   def set_post_comments
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(user: :profile)
   end
 end
