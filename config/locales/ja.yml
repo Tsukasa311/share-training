@@ -13,3 +13,5 @@ ja:
         part_id: 部位
         equipment_id: 器具
         place_id: 場所
+      comment:
+        text: テキスト
