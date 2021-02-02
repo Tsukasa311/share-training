@@ -89,7 +89,28 @@ RSpec.describe 'トレーニング投稿削除', type: :system do
       expect(all(".more")[0].hover).to have_no_link '削除', href: "/posts/#{@post1.id}"
     end
     it 'ログインしていないとき' do
+      # 投稿者のマイページに移動しようとすると、ログインページに遷移することを確かめる
       visit user_path(@post1.user_id)
+      expect(current_path).to eq "/users/sign_in"
+    end
+  end
+end
+
+RSpec.describe 'トレーニング投稿詳細', type: :system do
+  before do
+    @post = FactoryBot.create(:post)
+  end
+
+  context 'トレーニング詳細ページに移動できるとき' do
+    it 'ログインしているとき' do
+      
+    end
+  end
+
+  context 'トレーニング詳細ページに移動できないとき' do
+    it 'ログインしていないとき' do
+      # トレーニング投稿詳細ページへ移動しようとするとログインページに遷移することを確認する
+      visit post_path(@post.id)
       expect(current_path).to eq "/users/sign_in"
     end
   end
