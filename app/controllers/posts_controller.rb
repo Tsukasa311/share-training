@@ -56,10 +56,3 @@ class PostsController < ApplicationController
     @p = Post.ransack(params[:q])
   end
 end
-
-# def tag_search
-#   return nil if params[:keyword] == ''
-
-#   tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
-#   render json: { keyword: tag }
-# end
