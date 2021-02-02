@@ -43,6 +43,6 @@ class UsersController < ApplicationController
       part_id = post.part_id
       array << part_id
     end
-    return array
+    array
   end
 end
