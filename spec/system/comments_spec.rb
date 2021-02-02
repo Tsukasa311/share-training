@@ -9,11 +9,7 @@ RSpec.describe "コメント機能", type: :system do
 
   it 'ログインしたユーザーは、トレーニング投稿詳細ページでコメントが投稿' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @user.email
-    fill_in 'user_password', with: @user.password
-    find("input[name='commit']").click
-    expect(current_path).to eq root_path
+    sign_in(@user)
     # トレーニング投稿詳細ページに遷移する
     find(".search_btn").click
     expect((all(".more")[0].hover)).to have_link '詳細', href: "/posts/#{@post.id}"
@@ -28,11 +24,7 @@ RSpec.describe "コメント機能", type: :system do
   end
   it '投稿したコメントは、投稿者本人は削除できる' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @user.email
-    fill_in 'user_password', with: @user.password
-    find("input[name='commit']").click
-    expect(current_path).to eq root_path
+    sign_in(@user)
     # トレーニング投稿詳細ページに遷移する
     find(".search_btn").click
     expect((all(".more")[0].hover)).to have_link '詳細', href: "/posts/#{@post.id}"
@@ -54,11 +46,7 @@ RSpec.describe "コメント機能", type: :system do
   end
   it 'コメントした本人以外は、コメントを削除できない' do
     # ログインして投稿にコメントする
-    visit new_user_session_path
-    fill_in 'user_email', with: @user.email
-    fill_in 'user_password', with: @user.password
-    find("input[name='commit']").click
-    expect(current_path).to eq root_path
+    sign_in(@user)
     find(".search_btn").click
     expect((all(".more")[0].hover)).to have_link '詳細', href: "/posts/#{@post.id}"
     visit post_path(@post.id)
@@ -69,10 +57,7 @@ RSpec.describe "コメント機能", type: :system do
     link = find_link 'ログアウト', href: "/users/sign_out"
     link.click
     # 別のユーザーでログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @post.user.email
-    fill_in 'user_password', with: @post.user.password
-    find("input[name='commit']").click
+    sign_in(@post.user)
     # 先ほどの投稿詳細画面に移動する
     visit post_path(@post.id)
     # 「コメント削除」ボタンが表示されていないことを確認する

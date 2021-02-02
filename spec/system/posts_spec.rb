@@ -9,11 +9,7 @@ RSpec.describe "トレーニング投稿", type: :system do
   context 'トレーニング投稿ができるとき' do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      find("input[name='commit']").click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 新規投稿ページへのリンクがあることを確認する
       expect(page).to have_content('Shareする')
       # 新規投稿ページに移動する
@@ -52,11 +48,7 @@ RSpec.describe 'トレーニング投稿削除', type: :system do
   context 'トレーニング投稿が削除できるとき' do
     it 'ログインしたユーザーは自らが投稿したトレーニング投稿を削除できる' do
       # トレーニング１を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @post1.user.email
-      fill_in 'user_password', with: @post1.user.password
-      find("input[name='commit']").click
-      expect(current_path).to eq root_path
+      sign_in(@post1.user)
       # マイページに移動する
       visit user_path(@post1.user_id)
       # トレーニング１に「削除」ボタンがあることを確認する
@@ -78,11 +70,7 @@ RSpec.describe 'トレーニング投稿削除', type: :system do
   context 'トレーニング投稿が削除できないとき' do
     it 'ログインしたユーザーは自分以外のトレーニング投稿を削除できない' do
       # トレーニング１を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @post1.user.email
-      fill_in 'user_password', with: @post1.user.password
-      find("input[name='commit']").click
-      expect(current_path).to eq root_path
+      sign_in(@post1.user)
       # トレーニング2を投稿したユーザーのマイページに移動する
       visit user_path(@post2.user_id)
       # トレーニング２に「削除」ボタンがないことを確認する
@@ -104,11 +92,7 @@ RSpec.describe 'トレーニング投稿詳細', type: :system do
   context 'トレーニング詳細ページに移動できるとき' do
     it 'ログインしているとき' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'user[email]', with: @post.user.email
-      fill_in 'user[password]', with: @post.user.password
-      find("input[name='commit']").click
-      expect(current_path).to eq root_path
+      sign_in(@post.user)
       # マイページに移動する
       visit user_path(@post.user_id)
       # トレーニング投稿に「詳細」ボタンがあることを確認する

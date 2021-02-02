@@ -137,3 +137,40 @@ RSpec.describe 'ユーザーログイン', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザー情報編集', type: :system do
+  before do
+    @user1 = FactoryBot.create(:user)
+    @user2 = FactoryBot.create(:user)
+  end
+  
+  context 'ユーザー編集できるとき' do
+    it 'ログインしているユーザーとユーザー詳細ページのユーザーが合致するとき編集できる' do
+      # ユーザー１でログインする
+      sign_in(@user1)
+      # マイページに移動する
+      visit user_path(@user1.id)
+      # 編集ボタンがあることを確認する
+      expect(find(".pull_down_wrapper").hover).to have_link '編集', href: "/users/#{@user1.id}/edit"
+      # 編集ページに遷移できることを確認する
+      visit edit_user_path(@user1.id)
+      expect(page).to have_content('プロフィール編集')
+      # 登録ボタンを押すとはマイページに戻ることを確認する
+      find("input[name='commit']").click
+      expect(current_path).to eq user_path(@user1.id)
+    end
+  end
+  context 'ユーザー編集できないとき' do
+    it 'ログインしているユーザーとユーザー詳細ページのユーザが合致しないとき編集できない' do
+      # ユーザー2でログインする
+      sign_in(@user2)
+      # ユーザー１のユーザーページに移動する
+      visit user_path(@user1.id)
+      # 編集ボタンを表示するプルダウンボタンがないことを確認する
+      expect(page).to have_no_css '.pull_down_wrapper'
+      # 編集ページに移動しようとするとユーザーページにリダイレクトされる
+      visit edit_user_path(@user1.id)
+      expect(current_path).to eq user_path(@user1.id)
+    end
+  end
+end

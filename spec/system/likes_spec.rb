@@ -8,11 +8,7 @@ RSpec.describe "NiceTraining(いいね)機能", type: :system do
 
   it 'ログインしているユーザーは、トレーニング投稿に対してNiceTrainingできる' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @user.email
-    fill_in 'user_password', with: @user.password
-    find("input[name='commit']").click
-    expect(current_path).to eq root_path
+    sign_in(@user)
     # 投稿一覧ページに移動する
     find(".search_btn").click
     # 「NiceTraining」ボタンがあることを確認する
