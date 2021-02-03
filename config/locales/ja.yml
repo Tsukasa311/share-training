@@ -15,3 +15,6 @@ ja:
         place_id: 場所
       comment:
         text: テキスト
+  time:
+    formats:
+      default:  "%Y/%m/%d"

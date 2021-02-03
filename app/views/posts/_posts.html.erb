@@ -41,9 +41,10 @@
         </div>
         <div class="tag_list_field">
           <ul>
-            <li>#<%= post.part.name %></li>
-            <li>#<%= post.equipment.name %></li>
-            <li>#<%= post.place.name %></li>
+            <li>実施日：<%= l post.created_at %></li>
+            <li>部位：<%= post.part.name %></li>
+            <li>器具：<%= post.equipment.name %></li>
+            <li>場所：<%= post.place.name %></li>
           </ul>
           <div class="muscle_count", id="post_like_<%= post.id %>" >
             <%= render "likes/like", { post: post } %>           
