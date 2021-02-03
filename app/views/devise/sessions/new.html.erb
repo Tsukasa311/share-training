@@ -4,7 +4,7 @@
 
 <div class="user_info_form_wrapper">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class='login-flash-message'>
+    <div class='login-flash-message color_red'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>

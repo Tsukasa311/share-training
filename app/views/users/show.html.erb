@@ -44,7 +44,6 @@
     </div>
     <%= month_calendar events: @posts do |date, posts| %>
       <%= date.day %>
-
       <% posts.each do |post|%>
         <div class="part_name_in_calendar">
           <%= post.part.name %>
@@ -57,13 +56,9 @@
   <%= @user.nickname%>さんの投稿一覧
 </div>
 
-<% @posts.each do |post| %>
-<%= render "/posts/posts", { post: post} %>
-<% end %>
+<%= render partial: "/posts/posts", collection: @posts, as: "post" %>
 
 <h3 class="user_page_title">NiceTrainingした投稿</h3>
 <div class="liked_post_lists_wrapper">
-  <% @user.liked_posts.each do |post| %>
-    <%= render "/posts/posts", { post: post } %>
-  <% end %>
+  <%= render partial: "/posts/posts", collection: @user.liked_posts, as: "post" %>
 </div>

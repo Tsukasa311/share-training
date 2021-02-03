@@ -48,24 +48,18 @@
 }
 
 .sign_in_google:hover{
-  box-shadow: 0 0 2px darkblue;
+  box-shadow: 0 0 8px rgb(187, 211, 252);
   transition: 0.2s;
+}
+
+.color_red{
+  color: darkred;
+}
+
+.margin_bottom_10{
+  margin-bottom: 10px;
 }
 
 .login-flash-message{
   padding-bottom: 20px;
-  color: darkred;
-}
-
-#error_explanation ul {
-  margin-bottom: 10px;
-}
-
-#error_explanation ul li{
-  color: darkred;
-}
-
-#error_explanation h2{
-  color: darkred;
-  margin-bottom: 10px;
 }
