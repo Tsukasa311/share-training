@@ -5,7 +5,7 @@
         <div class="user_info">
           <div class="user_icon">
             <% if post.user.profile.image.attached?%>
-              <%= image_tag post.user.profile.image.variant(resize: '150 x 250'), class: "post_user_image" %>
+              <%= image_tag post.user.profile.image, class: "post_user_image" %>
             <% else %>
               <%= image_tag "default.png", class: "post_user_image"%>
             <% end %>
@@ -19,37 +19,35 @@
         </div>
       </div>
       <div class="post_text_wrapper">
-        <div class="more">
-          <span><%= image_tag 'arrow.png' %></span>
-          <ul class="more_lists_wrapper">
-            <li class="more_lists">
-              <%= link_to "詳細", post_path(post.id), class: "show_btn" %>
-            </li>
-            <% if current_user.id == post.user_id%>
-              <li class="more_lists">
-                <%= link_to "削除", post_path(post.id), method: :delete, class: "show_btn", data: { confirm: '本当に削除しますか？' }  %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+        <% unless current_page?(post_path(post.id)) && (current_user.id != post.user_id) %>
+          <div class="more">
+            <span><%= image_tag 'arrow.png' %></span>
+            <ul class="more_lists_wrapper">
+              <% unless current_page?(post_path(post.id)) %>
+                <li class="more_lists">
+                  <%= link_to "詳細", post_path(post.id), class: "show_btn" %>
+                </li>
+              <% end %>
+              <% if current_user.id == post.user_id%>
+                <li class="more_lists">
+                  <%= link_to "削除", post_path(post.id), method: :delete, class: "show_btn", data: { confirm: '本当に削除しますか？' }  %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div class="shared_text">
           <%= safe_join(post.text.split("\n"),tag(:br)) %>
         </div>
         <div class="tag_list_field">
           <ul>
-            <li>#<%= post.part.name %>
-            </li>
-            <li>#<%= post.equipment.name %>
-            </li>
-            <li>#<%= post.place.name %>
-            </li>
+            <li>#<%= post.part.name %></li>
+            <li>#<%= post.equipment.name %></li>
+            <li>#<%= post.place.name %></li>
           </ul>
           <div class="muscle_count", id="post_like_<%= post.id %>" >
-
-            <%= render "likes/like", { post: post } %>
-           
+            <%= render "likes/like", { post: post } %>           
           </div>
-
         </div>
       </div>
     </div>
