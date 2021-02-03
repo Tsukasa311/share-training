@@ -2,7 +2,7 @@
 <% post.liked_users.each do |user| %>
   <ul>
     <% if user.profile.image.attached? %>
-      <li><%= image_tag user.profile.image.variant(resize: '100 x 100'), class: "liked_user_image" %></li>
+      <li><%= image_tag user.profile.image, class: "liked_user_image" %></li>
     <% else %>
       <li><%= image_tag "default.png", class: "liked_user_image"%></li>
     <% end %>

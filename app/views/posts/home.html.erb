@@ -13,49 +13,49 @@
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "1"}, {class: "hidden"} %>
-        <%= f.submit "大胸筋", class: "part_btn chest"%>
+        <%= f.submit "大胸筋", class: "part_btn chest cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "2"}, {class: "hidden"} %>
-        <%= f.submit "広背筋・僧帽筋", class: "part_btn back"%>
+        <%= f.submit "広背筋・僧帽筋", class: "part_btn back cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "3"}, {class: "hidden"} %>
-        <%= f.submit "肩・三角筋", class: "part_btn shoulder"%>
+        <%= f.submit "肩・三角筋", class: "part_btn shoulder cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "4"}, {class: "hidden"} %>
-        <%= f.submit "上腕二頭筋", class: "part_btn arm2"%>
+        <%= f.submit "上腕二頭筋", class: "part_btn arm2 cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "5"}, {class: "hidden"} %>
-        <%= f.submit "上腕三頭筋", class: "part_btn arm3"%>
+        <%= f.submit "上腕三頭筋", class: "part_btn arm3 cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "6"}, {class: "hidden"} %>
-        <%= f.submit "腹筋", class: "part_btn abs"%>
+        <%= f.submit "腹筋", class: "part_btn abs cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "7"}, {class: "hidden"} %>
-        <%= f.submit "尻・大臀筋", class: "part_btn hip"%>
+        <%= f.submit "尻・大臀筋", class: "part_btn hip cover"%>
       <% end %>
     </div>
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :part_id_eq, Part.all, :id, :name, {selected: "8"}, {class: "hidden"} %>
-        <%= f.submit "脚・大腿四頭筋", class: "part_btn leg"%>
+        <%= f.submit "脚・大腿四頭筋", class: "part_btn leg cover"%>
       <% end %>
     </div>
   </div>

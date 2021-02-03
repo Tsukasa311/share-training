@@ -111,45 +111,41 @@
   opacity: 0.7;
 }
 
+.cover{
+  background-size: cover;
+}
+
 .chest{
   background-image: image-url('chest.jpeg');
-  background-size: cover;
 }
 
 .back{
   background-image: image-url('back.jpeg');
-  background-size: cover;
   font-size: 16px;
 }
 
 .shoulder{
   background-image: image-url('shoulder.jpeg');
-  background-size: cover;
 }
 
 .arm2{
   background-image: image-url('arm2.jpeg');
-  background-size: cover;
 }
 
 .arm3{
   background-image: image-url('arm3.jpeg');
-  background-size: cover;
 }
 
 .abs{
   background-image: image-url('abs.jpeg');
-  background-size: cover;
 }
 
 .hip{
   background-image: image-url('hip.jpeg');
-  background-size: cover;
 }
 
 .leg{
   background-image: image-url('leg.jpeg');
-  background-size: cover;
   font-size: 16px;
 }
 
