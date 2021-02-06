@@ -34,3 +34,14 @@
 .image_btn{
   margin-top: 6px;
 }
+
+  /* -----スマホ表示----- */
+
+  @media (max-width: 500px){
+
+    .user_profile_form_wrapper{
+      width: 90vw;
+      padding: 40px 40px;
+    }
+
+  }

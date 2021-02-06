@@ -63,3 +63,16 @@
 .login-flash-message{
   padding-bottom: 20px;
 }
+
+
+  /* -----スマホ表示----- */
+
+  @media (max-width: 500px){
+    
+    .user_info_form_wrapper{
+      width: 90vw;
+      font-size: 12px;
+      padding: 40px 50px;
+    }
+    
+  }
