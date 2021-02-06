@@ -40,3 +40,57 @@
   .header_btn:hover{
     color: rgb(92, 92, 92);
   }
+
+  /* スマホ表示 */
+
+@media (max-width: 500px){
+  .main_header{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+  }
+  
+  .left_header{
+    display: flex;
+    align-items: center;
+  }
+  
+  .app_title{
+    margin: 0 20px;
+    font-family: LucidaGrande;
+  }
+  
+  .app_logo{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .notice_message{
+    color: darkblue;
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .current_user_name{
+    display: none;;
+  }
+  
+  .right_header{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  .header_btn{
+    padding: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .header_btn:hover{
+    color: rgb(92, 92, 92);
+  }
+}
