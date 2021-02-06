@@ -7,19 +7,6 @@
   height: 100%;
 }
 
-.part_index{
-  height: 80px;
-  margin: 0 100px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid darkgray;
-}
-
-.part_index,p {
-  font-size: 32px;
-  font-weight: bold;
-  padding-top: 30px;
-}
-
 .shared_post{
   background-color: white;
   height: 200px;
@@ -167,4 +154,188 @@
 
 .like_count{
   font-weight: bold;
+}
+
+
+/* -----スマホ表示----- */
+
+@media (max-width: 500px) {
+  .searched_posts_title{
+    text-align: center;
+    margin: 180px auto 40px;
+    width: 300px;
+    padding: 5px;
+    border-bottom: darkgray 1px solid;
+  }
+
+  .index_wrapper{
+    margin:0 100px;
+  }
+  
+  .shared_posts_wrapper{
+    background-color: white;
+    height: 100%;
+  }
+  
+  .part_index{
+    height: 80px;
+    margin: 0 100px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid darkgray;
+  }
+  
+  .part_index,p {
+    font-size: 32px;
+    font-weight: bold;
+    padding-top: 30px;
+  }
+  
+  .shared_post{
+    background-color: white;
+    height: 200px;
+    margin-bottom: 15px;
+    border: 1px solid darkgray;
+    box-shadow: 3px 2px 6px darkgray;
+    display: flex;
+  }
+  
+  .user_wrapper{
+    height: 100%;
+    width: 30%;
+    border-right: 1px solid darkgray;
+  }
+  
+  .user_info{
+    height: 35%;
+    width: 100%;
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user_icon{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    margin-right: 15px;
+    border: solid 1px darkgray;
+  }
+  
+  .post_user_image{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 1px darkgray;
+  }
+  
+  .user_name{
+    height: 50%;
+    width: 70%;
+    font-weight: bold;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_introduction{
+    padding: 15px;
+    border-top: darkgray 1px solid;
+    word-break: break-all;
+  }
+  
+  .post_text_wrapper{
+    width: 100%;
+    position: relative
+  }
+  
+  .more{
+    height: 20px;
+    width: 40px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    text-align: center;
+  }
+  
+  .more_lists_wrapper{
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+  
+  .more:hover .more_lists{
+    display: block;
+  }
+  
+  .more_lists{
+    background-color: rgb(232, 240, 254);
+    width: 70px;
+    border: 1px solid rgba(169, 169, 169, 0.479);
+    display: none;
+    text-align: center;
+  }
+  
+  .more_lists:hover{
+    background-color: rgb(206, 223, 252);
+  }
+  
+  .show_btn{
+    display: block;
+    padding: 10px 0;
+  }
+  
+  .shared_text{
+    height: 80%;
+    width: 100%;
+    word-break: break-all;
+    padding: 15px;
+    border-bottom: 1px solid rgba(169, 169, 169, 0.479);
+    overflow: scroll;
+  }
+  
+  .tag_list_field{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .tag_list_field ul li{
+    display: inline-block;
+    padding: 10px 0 10px 20px;
+  }
+  
+  .muscle_count{
+    position: absolute;
+    height: 40px;
+    right: 20px;
+    top: 0;
+  }
+  
+  .like_wrapper{
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .like_btn_icon{
+    background-image: image-url('before_like.png');
+    background-size: cover;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+  }
+  
+  .liked_btn_icon{
+    background-image: image-url('after_like.png');
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .like_count{
+    font-weight: bold;
+  }
 }
