@@ -6,7 +6,7 @@
       <li><%= image_tag "default.png", class: "liked_user_image"%></li>
     <% end %>
 
-    <li><%= link_to comment.user.nickname, user_path(comment.user.id) %></li>
+    <li class="liked_user_nickname"><%= link_to comment.user.nickname, user_path(comment.user.id) %></li>
     <li class="comment"><%= safe_join(comment.text.split("\n"),tag(:br)) %></li>
     
     <% if current_user.id == comment.user.id %>
