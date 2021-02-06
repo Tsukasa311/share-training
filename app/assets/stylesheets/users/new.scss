@@ -31,3 +31,23 @@
 .top_page_link:hover{
   color: rgb(100, 100, 100);
 }
+
+  /* -----スマホ表示----- */
+
+  @media (max-width: 500px){
+    .sign_up_select_field{
+      height: 205px;
+      width: 90vw;
+      margin: 180px auto 30px;
+    }
+    
+    .sign_up_select_field ul li{
+      height: 70px;
+      margin-bottom: 10px;
+    }
+    
+    .sign_up_btn{
+      padding-top: 25px;
+      text-align: center;
+    }
+  }
