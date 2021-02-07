@@ -93,90 +93,33 @@ textarea{
 
   .post_field{
     font-size: 10px;
-    background-color: rgb(240, 239, 239);
-    box-shadow: 0 0 7px gray;
     width: 90vw;
     margin: 30px auto 0;
     padding: 40px 20px 40px;
   }
   
   .post_wrapper{
-    margin-bottom: 0px;
-  }
-  
-  .post_input_area{
-    width: 100%;
+    margin-bottom: initial;
   }
   
   .post_text{
-    background-color: white;
     height: 150px;
-    width: 100%;
-    margin-bottom: 20px;
-    position: relative;
-    color: rgb(121, 121, 121);
-  }
-  
-  .text_count{
-    position: absolute;
-    right: 10px;
-    bottom: 5px;
   }
   
   .text_area{
-    border: 1px solid darkgray;
     height: 150px;
-    width: 100%;
-    word-break: break-all;
     padding: 10px;
-  }
-  
-  textarea{
-    resize: none;
   }
   
   .tag_field{
     height: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
   }
-  
-  .tag_form{
-    border: 1px solid darkgray;
-    color: rgb(82, 82, 82);
-    height: 100%;
-    width: 100%;
-    background-color: white;
-  }
-  
-  .tag_form:hover{
-    background-color: rgb(232, 240, 254);
-    transition: 0.4s;
-  }
-  .tag_decoration{
-    width: 100%;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
+
   .post_btn{
-    background-color: rgba(255, 167, 52, 0.712);
     height: 30px;
     width: 100px;
     margin: 20px auto 0;
     float: initial;
   }
-  
-  .post_btn:hover{
-    background-color: rgb(255, 167, 52);
-    transition: 0.4s;
-  }
-  
-  .submit_btn{
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    border: 1px solid darkgray;
-  }
+ 
 }
