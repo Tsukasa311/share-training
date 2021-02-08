@@ -1,3 +1,9 @@
+.no_data{
+  margin: 100px auto;
+  text-align: center;
+  font-size: 20px;
+}
+
 .index_wrapper{
   margin: 0 100px;
 }
@@ -156,6 +162,12 @@
 /* -----スマホ表示----- */
 
 @media (max-width: 500px) {
+
+  .no_data{
+    font-size: 14px;
+    margin-top: 50px;
+  }
+
   .searched_posts_title{
     margin: 180px auto 40px;
     width: 300px;

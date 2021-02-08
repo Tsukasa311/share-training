@@ -4,4 +4,11 @@
 
 <div class="searched_posts_title">
 </div>
+
+ <% if @results.empty? %>
+  <div class="no_data">
+    検索結果がありません
+  </div>
+ <% end%>
+ 
 <%= render partial: "posts", collection: @results, as: "post" %>

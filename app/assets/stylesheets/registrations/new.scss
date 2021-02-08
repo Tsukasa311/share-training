@@ -34,11 +34,14 @@
   margin: 0 auto;
   display: block;
   border: solid 1px darkgray;
+  transition: 0.4s;
+
 }
 
 .next_btn:hover{
   background-color: rgb(206, 223, 252);
   transition: 0.4s;
+  border-color: darkblue;
 }
 
 /*  ログイン画面  */
@@ -47,9 +50,13 @@
   margin-bottom: 40px;
 }
 
+.sign_in_google{
+  transition: 0.4s;
+}
+
 .sign_in_google:hover{
   box-shadow: 0 0 8px rgb(187, 211, 252);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .color_red{

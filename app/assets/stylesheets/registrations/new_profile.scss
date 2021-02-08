@@ -24,11 +24,13 @@
   margin: 0 auto ;
   display: block;
   border: solid 1px darkgray;
+  transition: 0.4s;
 }
 
 .profile_next_btn:hover{
   background-color: rgb(206, 223, 252);
   transition: 0.4s;
+  border-color: darkblue;
 }
 
 .image_btn{
