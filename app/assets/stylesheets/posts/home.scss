@@ -79,11 +79,11 @@
 }
 
 .part_title{
-  margin: 50px 0 30px;
+  margin: 50px 0 40px;
   font-size: 28px;
   font-weight: bold;
   padding-bottom: 10px;
-  border-bottom: darkblue 2px solid;
+  border-bottom: darkblue 1px solid;
 }
 
 .parts_wrapper{
@@ -101,7 +101,7 @@
   font-size: 20px;
   height: 100px;
   width: 150px;
-  padding: 40px 20px 0;
+  padding: 40px 0 0;
   margin:8px;
   border-radius: 30px;
   transition: 0.4s;
@@ -151,6 +151,27 @@
 .leg{
   background-image: image-url('leg.jpeg');
   font-size: 16px;
+}
+
+.only_body{
+  background-image: image-url('only_body.jpg');
+}
+
+.dumbbell{
+  background-image: image-url('dumbbel.jpg');
+}
+
+.dum_bench{
+  background-image: image-url('dumbbel_bench.jpg');
+  font-size: 16px;
+}
+
+.yoga{
+  background-image: image-url('yoga.jpg')
+}
+
+.gim_machine{
+  background-image: image-url('gim.jpg')
 }
 
 .hidden{

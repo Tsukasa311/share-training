@@ -59,4 +59,39 @@
       <% end %>
     </div>
   </div>
+  <div class="part_title">
+    器具から探す
+  </div>
+  <div class= "parts_wrapper">
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "1"}, {class: "hidden"} %>
+        <%= f.submit "身体一つ!", class: "part_btn only_body cover"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "2"}, {class: "hidden"} %>
+        <%= f.submit "ダンベル", class: "part_btn dumbbell cover"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "4"}, {class: "hidden"} %>
+        <%= f.submit "ダンベル＋ベンチ", class: "part_btn dum_bench cover"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "5"}, {class: "hidden"} %>
+        <%= f.submit "ヨガマット", class: "part_btn yoga cover"%>
+      <% end %>
+    </div>
+    <div class="part_item">
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "6"}, {class: "hidden"} %>
+        <%= f.submit "シムマシン", class: "part_btn gim_machine cover"%>
+      <% end %>
+    </div>
+  </div>
 </div>

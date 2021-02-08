@@ -9,6 +9,9 @@
   <div class="no_data">
     検索結果がありません
   </div>
+  <div class="top_page_link">
+    <%= link_to "トップページへ戻る", root_path %>
+  </div>
  <% end%>
- 
+
 <%= render partial: "posts", collection: @results, as: "post" %>
