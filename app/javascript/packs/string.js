@@ -1,4 +1,4 @@
-let num = 0;
+let num = -1;
 function string(){
   const target = document.getElementById("title");
   HTML1 = 'トレーニングを\n　　見つけよう';
@@ -15,15 +15,16 @@ function string(){
   target.innerText = array[num];
   target.animate({
     opacity: [0, 1]
-  }, 1600)
+  }, 1600);
 
   const fadeOut = () => {
     target.animate({
       opacity: [1, 0]
-    }, 300)
+    }, 300);
   }
 
-  setTimeout(fadeOut, 5700)
+  setTimeout(fadeOut, 5700);
 }
 
 setInterval(string, 6000);
+window.addEventListener('load',string);
