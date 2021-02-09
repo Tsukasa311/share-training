@@ -8,7 +8,8 @@ function slideTimer() {
   }else {
     num ++;
   }
-  homeTop.className = classLists[num]
+  
+  homeTop.className = classLists[num];
 }
 
 setInterval(slideTimer, 6000);
