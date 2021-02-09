@@ -1,6 +1,6 @@
 .home_top1{
   height: 660px;
-  padding-top: 60px;
+  padding-top: 50px;
   margin-bottom: 20px;
   background-image: image-url('top.jpg');
   background-size: cover;
@@ -12,7 +12,7 @@
 
 .home_top2{
   height: 660px;
-  padding-top: 60px;
+  padding-top: 50px;
   margin-bottom: 20px;
   background-image: image-url('top2.jpg');
   background-size: cover;
@@ -24,7 +24,7 @@
 
 .home_top3{
   height: 660px;
-  padding-top: 60px;
+  padding-top: 50px;
   margin-bottom: 20px;
   background-image: image-url('top3.jpg');
   background-size: cover;
@@ -37,21 +37,37 @@
 .home_title{
   font-size: 54px;
   font-weight: bold;
+  font-family: ToppanBunkyuGothicPr6N-Regular;
   color: rgb(4, 10, 88);
   position: absolute;
-  top: 190px;
+  top: 250px;
   left: 30px;
   transition: 1s ease-in-out;
+}
+
+.serch_container{
+  height: 150px;
+  padding-top: 50px;
+  margin-bottom: 10px;
 }
 
 .search_form{
   background-color: rgba(232, 240, 254, 0.842);
   width: 915px;
   height: 60px;
-  margin: 0 auto 20px;
+  margin: 20px auto 20px;
   border-radius: 40px;
   display: flex;
   box-shadow: 2px 3px 2px rgba(169, 169, 169, 0.473);
+}
+
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  margin-top: 5px;
+  margin-left: -457px;
 }
 
 .search_text_field{
@@ -242,6 +258,14 @@
     flex-direction: column;
     box-shadow: initial;
   }
+
+  .fixed{
+    position: initial;
+    top: initial;
+    left: initial;
+    z-index: initial;
+    margin: 20px auto 0;
+  }  
   
   .search_text_field{
     background-color: rgba(232, 240, 254, 0.692);

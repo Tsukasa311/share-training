@@ -1,4 +1,4 @@
-<div class="search_form">
+<div class="search_form" id="is_fixed">
   <%= search_form_for @p, url: search_posts_path do |f| %>
     <%= f.search_field :text_cont, placeholder: "キーワード", class: "search_text_field"%>
     <%= f.collection_select :part_id_eq, Part.all, :id, :name, {include_blank: '部位'}, {class: "tag_search_form"} %>
