@@ -1,11 +1,37 @@
-.home_top{
+.home_top1{
   height: 660px;
+  padding-top: 60px;
   margin-bottom: 20px;
   background-image: image-url('top.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;
+  transition: 1s ease-in-out;
+}
+
+.home_top2{
+  height: 660px;
+  padding-top: 60px;
+  margin-bottom: 20px;
+  background-image: image-url('top2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  transition:1s ease-in-out;
+}
+
+.home_top3{
+  height: 660px;
+  padding-top: 60px;
+  margin-bottom: 20px;
+  background-image: image-url('top3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  transition:1s ease-in-out;
 }
 
 .home_title{
@@ -18,12 +44,13 @@
 }
 
 .search_form{
-  background-color: rgb(232, 240, 254);
+  background-color: rgba(232, 240, 254, 0.842);
   width: 915px;
   height: 60px;
-  margin: 60px auto 20px;
+  margin: 0 auto 20px;
   border-radius: 40px;
   display: flex;
+  box-shadow: 2px 3px 2px rgba(169, 169, 169, 0.473);
 }
 
 .search_text_field{
@@ -182,25 +209,37 @@
 /* -----スマホ表示----- */
 
 @media (max-width: 500px) {
-  .home_top{
-    height: 400px;
+  .home_top1{
+    height: 500px;
+    margin-bottom: 30px;
+  }
+
+  .home_top2{
+    height: 500px;
+    margin-bottom: 30px;
+  }
+
+  .home_top3{
+    height: 500px;
     margin-bottom: 30px;
   }
   
   .home_title{
     font-size: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
     position: static;
     text-align: center;
   }
 
   .search_form{
-    background-color: rgba(232, 240, 254, 0.616);
-    height: 0px;
+    background-color: initial;
+    height: initial;
     width: 300px;
+    margin-top: 20px;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
+    box-shadow: initial;
   }
   
   .search_text_field{
@@ -223,7 +262,7 @@
     font-size: 12px;
     height: 25px;
     padding: 0 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     border: none;
   }
   
@@ -232,7 +271,7 @@
     font-size: 12px;
     height: 25px;
     width: 200px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 50px;
     border-radius: 20px;
   }
