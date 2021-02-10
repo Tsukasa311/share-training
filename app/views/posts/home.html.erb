@@ -89,7 +89,7 @@
     <div class="part_item">
       <%= search_form_for @p, url: search_posts_path do |f| %>
         <%= f.collection_select :equipment_id_eq, Equipment.all, :id, :name, {selected: "6"}, {class: "hidden"} %>
-        <%= f.submit "シムマシン", class: "part_btn gim_machine cover"%>
+        <%= f.submit "ジムマシン", class: "part_btn gim_machine cover"%>
       <% end %>
     </div>
   </div>
