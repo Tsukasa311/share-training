@@ -15,16 +15,17 @@ function string(){
   target.innerText = array[num];
   target.animate({
     opacity: [0, 1]
-  }, 1600);
+  }, 2000);
 
   const fadeOut = () => {
     target.animate({
       opacity: [1, 0]
-    }, 300);
+    }, 400);
   }
 
-  setTimeout(fadeOut, 5700);
+  setTimeout(fadeOut, 5600);
 }
 
-setInterval(string, 6000);
 window.addEventListener('load',string);
+setInterval(string, 6000);
+
