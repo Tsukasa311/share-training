@@ -12,6 +12,9 @@ https://share-training.herokuapp.com/
 basic認証
 - username: user
 - password: password
+アカウント
+- email: test1@test1
+- password: test1111
 
 # 利用方法
 画面右上のログイン画面から必要事項を記入しログインを行う。
@@ -55,6 +58,7 @@ basic認証
 - コメント保存・削除
 - カレンダー
 - グラフ化
+- 画像投稿機能（保存先：AWS（S3））
 
 # 開発環境
 - Ruby 2.6.5
